@@ -9,7 +9,8 @@
     <script src="https://unpkg.com/history@5/umd/history.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-router@6/umd/react-router.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-router-dom@6/umd/react-router-dom.development.js" crossorigin></script>
-    <script type="text/babel" src="./rgame.jsx"></script>
+      <script type="text/babel" src="./headbar.jsx"></script>
+    <script type="text/babel" src="./ui.jsx"></script>
         <style type="text/css">
 
 div {
@@ -35,11 +36,12 @@ div {
             body {
                 display: block;
                 margin: 0px;
+                background-color: #333;
             }
             #leftBar {
                 grid-column: 1;
                 grid-row: 3/4;
-                background-color: blue;
+                background-color: #333;
             }
             #mainCanvas {
                 grid-column: 2;
@@ -52,13 +54,13 @@ div {
                 grid-column: 1/4;
                 grid-row: 1;
                 display: inline;
-                background-color: royalblue;
+                background-color: #333;
             }
             #topBar {
                 grid-column: 1/3;
                 grid-row: 2;
                 display: inline;
-                background-color: beige;
+                background-color: #333;
             }
             #rightBar {
                 grid-column: 3/4;
@@ -75,7 +77,67 @@ div {
                 grid-row: 5;
                 background-color: gray;
             }
-            
+ 
+  
+            .header_ul {
+	list-style: none;
+                margin: 0;
+                    font-size: 14px;
+	font-family: 'Economica', sans-serif;
+                padding-left: 0;
+                
+}
+            .header_ul li {
+	padding-right: 80px;
+                margin-left: 20px;
+	float: left;
+                color: #fff;
+                text-align: center;
+}
+            .header_ul li:hover {
+	color: burlywood;
+   }
+            .header_ul_ul {
+	width: 80px;
+	text-align: center;
+	position: absolute;
+	list-style: none;
+	background: #333;
+	color: #fff;
+    transform: translate(-20px,0)
+}
+
+.header_ul_ul li {
+	margin: 10px 1px 10px -15px;
+	float: none;
+    text-align: left;
+    font-size: 12px;
+	font-family: 'Economica', sans-serif;
+}
+.header_ul_file .header_ul_ul {
+	display: none;
+}
+
+.header_ul_edit .header_ul_ul {
+	display: none;
+}
+
+.header_ul_project .header_ul_ul {
+	display: none;
+}
+
+.header_ul_file:hover .header_ul_ul {
+	display: block;
+}
+
+.header_ul_edit:hover .header_ul_ul {
+	display: block;
+}
+
+.header_ul_project:hover .header_ul_ul {
+	display: block;
+}
+
     </style>
   </head>
   <body>
