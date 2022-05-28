@@ -108,4 +108,3 @@ class ButtonBar extends React.Component {
 
 ReactDOM.render(
 <App name="rgame"/>, document.querySelector("#app"));
-
