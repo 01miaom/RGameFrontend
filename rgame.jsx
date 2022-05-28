@@ -9,7 +9,7 @@ return (
   <BrowserRouter>
       <div>
       <Routes>
-      	<Route path="/RGameFrontend/" element={<Ui/>} />
+      	<Route path="/RGameFrontend/" element={<Ui/>} />//fix
       </Routes>
       </div>
     </BrowserRouter>
@@ -29,6 +29,7 @@ class Ui extends React.Component {
                     <LeftBar/>
                     <MainCanvas />
                     <RightBar />
+                    <CentreBar />
                     <ButtonBar />
             </div>
         );
@@ -96,6 +97,16 @@ class RightBar extends React.Component {
     }
 }
 
+class CentreBar extends React.Component {
+    render() {
+        return (
+            <div id="centreBar">
+            </div>
+        );
+    }
+}
+
+
 class ButtonBar extends React.Component {
     render() {
         return (
@@ -108,3 +119,4 @@ class ButtonBar extends React.Component {
 
 ReactDOM.render(
 <App name="rgame"/>, document.querySelector("#app"));
+
