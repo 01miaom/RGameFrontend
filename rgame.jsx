@@ -9,7 +9,7 @@ return (
   <BrowserRouter>
       <div>
       <Routes>
-      	<Route path="/" element={<Ui/>} />
+      	<Route path="/RGameFrontend/" element={<Ui/>} />
       </Routes>
       </div>
     </BrowserRouter>
