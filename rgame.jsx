@@ -1,3 +1,4 @@
+
 const {useMatch, useParams, useLocation} = ReactRouterDOM;
 const {BrowserRouter, Routes, Route, Link} = ReactRouterDOM;
 
@@ -40,10 +41,7 @@ class HeadBar extends React.Component {
     render() {
         return (
             <div id="headBar">
-                    <button>File</button>
-                    <button>Edit</button>
-                    <button>Project</button>
-                    <button>Run</button>
+                    <File />
             </div>
         );
     }
@@ -53,7 +51,6 @@ class TopBar extends React.Component {
     render() {
         return (
             <div id="topBar">
-                    <button>File</button>
                     <button>Edit</button>
                     <button>Project</button>
                     <button>Run</button>
