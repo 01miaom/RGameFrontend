@@ -1,7 +1,13 @@
 class File extends React.Component {
+    openwindow(){
+        document.getElementById('cover').style.display='block';
+        document.getElementById('floatwindow').style.display='block';
+    }
     render() {
         return (
         <div class="header">
+                <Setting />
+                <div id="cover" class="cover"></div>
 			<ul class="header_ul">
 				<li class="header_ul_file">File
 					<ul class="header_ul_ul">
@@ -9,7 +15,7 @@ class File extends React.Component {
 						<li>Save</li>
 						<li>Import</li>
                         <li>Export</li>
-                        <li>Setting</li>
+                        <li onClick={this.openwindow}>Setting</li>
 					</ul>
 				</li>
 
@@ -36,3 +42,19 @@ class File extends React.Component {
         );
     }
 }
+
+
+class Setting extends React.Component {
+    closewindow(){
+        document.getElementById('cover').style.display='none';
+        document.getElementById('floatwindow').style.display='none';       
+    }
+    render() {
+        return (
+            <div class="floatwindow" draggable="true" id="floatwindow">
+                <p id="closeWindow" onClick={this.closewindow}>x</p>
+            </div>
+        );
+    }
+}
+
