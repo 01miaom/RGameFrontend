@@ -82,6 +82,7 @@ class RightBar extends React.Component {
     render() {
         return (
             <div id="rightBar">
+                <SearchBar />
             </div>
         );
     }
@@ -148,6 +149,9 @@ const scene = new THREE.Scene();
 			};
 
 			animate();
+
+
+
 
 window.onresize=function(){
     renderer.setSize(container.clientWidth, container.clientHeight);
