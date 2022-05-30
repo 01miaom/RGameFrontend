@@ -38,6 +38,7 @@ class File extends React.Component {
 				<li class="header_ul_run">Run
 				</li>
 			</ul>
+                <img id="ico" src="./cat.png"/>
 		</div>
         );
     }
