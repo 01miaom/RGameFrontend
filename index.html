@@ -10,8 +10,10 @@
     <script src="https://unpkg.com/react-router@6/umd/react-router.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-router-dom@6/umd/react-router-dom.development.js" crossorigin></script>
       <script src="./three.js"></script>
+      <link href="./boostrap.css" rel="stylesheet">
       <script type="text/babel" src="./topbar.jsx"></script>
       <script type="text/babel" src="./headbar.jsx"></script>
+      <script type="text/babel" src="./leftbar.jsx"></script>
     <script type="text/babel" src="./ui.jsx"></script>
         <style type="text/css">
 
@@ -100,9 +102,9 @@ div {
                 
 }
             .header_ul li {
-	padding-right: 80px;
+	            padding-right: 80px;
                 margin-left: 20px;
-	float: left;
+	            float: left;
                 color: #fff;
                 text-align: center;
 }
@@ -149,6 +151,19 @@ div {
 .header_ul_project:hover .header_ul_ul {
 	display: block;
 }
+            /*
+.header_ul_file:hover {
+	background-color: gray;
+}
+
+.header_ul_edit:hover {
+	background-color: gray;
+}
+
+.header_ul_project:hover {
+	background-color: gray;
+}
+            */
             .floatwindow {
                 display: none;
                 width:500px;
@@ -200,6 +215,41 @@ div {
                 background-color: #333;
                 white-space: nowrap;
             }
+            .left_ul {
+	list-style: none;
+                margin: 0;
+                    font-size: 14px;
+	font-family: 'Economica', sans-serif;
+                padding-left: 0;
+                
+}
+            .left_ul li {
+    padding-right: 80px;
+    float: left;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+}
+             .left_ul_ul {
+	width: 80px;
+	text-align: center;
+	position: absolute;
+	list-style: none;
+	background: #333;
+	color: #fff;
+    transform: translate(29px,-33px)
+}
+            
+            .header_ul_cube .left_ul_ul {
+	display: none;
+}
+            .header_ul_cube:hover {
+                background-color: gray;
+            }
+
+            .header_ul_cube:hover .left_ul_ul {
+	display: block;
+}
     </style>
   </head>
   <body>
