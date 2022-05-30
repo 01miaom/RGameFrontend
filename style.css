@@ -115,7 +115,7 @@ div {
 }
 
 .header_ul_ul li {
-	margin: 10px 1px 10px -15px;
+	margin: 10px 1px 1px 15px;
 	float: none;
     text-align: left;
     font-size: 12px;
