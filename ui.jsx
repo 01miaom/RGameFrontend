@@ -31,6 +31,7 @@ class Ui extends React.Component {
                     <MainCanvas />
                     <RightBar />
                     <CentreBar />
+                    <DetailBar />
                     <ButtonBar />
             </div>
         );
@@ -50,10 +51,8 @@ class HeadBar extends React.Component {
 class TopBar extends React.Component {
     render() {
         return (
-            <div id="topBar">
-                    <button>Edit</button>
-                    <button>Project</button>
-                    <button>Run</button>
+            <div id="topBarOut">
+                    <Bar />
             </div>
         );
     }
@@ -62,7 +61,6 @@ class TopBar extends React.Component {
 class MainCanvas extends React.Component {
     render() {
         return (
-            
              <div id= "mainCanvas">
             </div>
             
@@ -88,6 +86,15 @@ class RightBar extends React.Component {
     render() {
         return (
             <div id="rightBar">
+            </div>
+        );
+    }
+}
+
+class DetailBar extends React.Component {
+    render() {
+        return (
+            <div id="detailBar">
             </div>
         );
     }
