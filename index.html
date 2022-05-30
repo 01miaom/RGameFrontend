@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/react-router@6/umd/react-router.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-router-dom@6/umd/react-router-dom.development.js" crossorigin></script>
       <script src="./three.js"></script>
+      <script type="text/babel" src="./topbar.jsx"></script>
       <script type="text/babel" src="./headbar.jsx"></script>
     <script type="text/babel" src="./ui.jsx"></script>
         <style type="text/css">
@@ -57,21 +58,31 @@ div {
                 display: inline;
                 background-color: #333;
             }
-            #topBar {
+            #topBarOut {
                 grid-column: 1/3;
                 grid-row: 2;
                 display: inline;
                 background-color: #333;
+                overflow: scroll;
+                scrollbar-width:none;
+            }
+            ::-webkit-scrollbar { /*hidden bar*/
+                display: none;
             }
             #rightBar {
                 grid-column: 3/4;
-                grid-row: 2/6;
+                grid-row: 2/4;
                 background-color: rosybrown;
             }
             #centreBar {
                 grid-column: 1/3;
                 grid-row: 4;
                 background-color: green;
+            }
+            #detailBar {
+                grid-column: 3/4;
+                grid-row: 4/6;
+                background-color: olive;
             }
             #buttonBar {
                 grid-column: 1/3;
@@ -167,6 +178,28 @@ div {
 				z-index: 1000;
 				opacity: 40%;
 			}
+            .bar {
+                background: gray;
+                border-radius: 2px;
+                padding-inline:25px;
+                font-size: 12px;
+	            font-family: 'Economica', sans-serif;
+                color:#fff;
+                margin: 0.5px;
+            }
+            .bar:hover {
+                background-color: darkgray;
+            }
+            #barclose:hover {
+                opacity: 0.7;
+            }
+            #topBar {
+                grid-column: 1/3;
+                grid-row: 2;
+                display: inline;
+                background-color: #333;
+                white-space: nowrap;
+            }
     </style>
   </head>
   <body>
