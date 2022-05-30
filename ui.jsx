@@ -72,11 +72,7 @@ class LeftBar extends React.Component {
     render() {
         return (
             <div id="leftBar">
-                    <button>Edit</button>
-                <br/>
-                    <button>cube</button>
-                <br/>
-                    <button>Run</button>  
+                    <Shape />
             </div>
         );
     }
