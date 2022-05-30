@@ -278,3 +278,46 @@ div {
             .left_ul_control:hover .left_ul_ul {
 	           display: block;
             }
+#search{
+        height: 16px;
+    position: absolute;
+    top: 30px;
+    transform: translate(28px, 2px);
+    border-radius: 6px;
+}
+svg.bi.bi-search {
+    position: absolute;
+    top: 33px;
+    color: wheat;
+    transform: translate(6px, 2px);
+}
+input#search {
+    background-color: #333;
+    width:21%;
+        outline:none;
+    border:0;
+    height: 20px;
+    color:white;
+}
+#searchplace {
+    height:35px;
+}
+#tree {
+    background-color: #333;
+    height: 420px;
+    margin: 2px;
+    font-size: 5px;
+}
+.node{
+    color: whitesmoke;
+}
+.scene{
+    margin-left: 14px;
+    color: yellow;
+}
+.object{
+    color: red;
+}
+ul{
+    padding-left: 8px;
+}
