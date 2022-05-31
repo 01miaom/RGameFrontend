@@ -111,11 +111,12 @@ div {
 	list-style: none;
 	background: #333;
 	color: #fff;
-    transform: translate(-20px,0)
+    transform: translate(-20px,0);
+                z-index: 1000;
 }
 
 .header_ul_ul li {
-	margin: 10px 1px 1px 15px;
+	margin: 10px 1px 5px 15px;
 	float: none;
     text-align: left;
     font-size: 12px;
@@ -228,6 +229,7 @@ div {
                  height: 21px;
             }
              .left_ul_ul {
+    z-index: 1000;
 	width: 60px;
 	text-align: center;
 	position: absolute;
@@ -320,4 +322,7 @@ input#search {
 }
 ul{
     padding-left: 8px;
+}
+canvas.obit-controls-gizmo {
+    position: absolute;
 }
