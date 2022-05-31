@@ -1,4 +1,4 @@
-import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js";
+import * as THREE from "./viewhelper/three.module.js";
 import { GUI } from "./viewhelper/lib.js";
 
 import { OrbitControls } from "./viewhelper/OrbitControls.js";
@@ -7,10 +7,11 @@ import { OrbitControlsGizmo } from "./viewhelper/OrbitControlsGizmo.js";
 var mesh, renderer, scene, camera, controls, controlsGizmo;
 
 setTimeout(function() { init(); }, 1000); 
+window.onresize = resize;
 animate();
 
-function init() {
 
+function init() {
   // renderer
      const container = document.getElementById( 'mainCanvas' );
   renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -74,23 +75,19 @@ function init() {
 }
 
 function animate() {
-
   requestAnimationFrame( animate );
   renderer.render( scene, camera );
   controls.update();
-
 }
 
 function resize() {
-  renderer.setSize( container.clientWidth,container.clientHeight );
+    const container = document.getElementById( 'mainCanvas' );
+  renderer.setSize( container.clientWidth, container.clientHeight );
   camera.aspect = ( container.clientWidth/container.clientHeight);
   camera.updateProjectionMatrix();
 }
 
-window.onresize = resize;
-
-
-
+export default {resize}
 
 
 /*
