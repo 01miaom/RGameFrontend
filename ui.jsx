@@ -36,7 +36,7 @@ class Ui extends React.Component {
                     <LeftBar/>
                     <MainCanvas />
                     <RightBar />
-                    <CentreBar />
+                    <CenterBar />
                     <DetailBar />
                     <ButtonBar />
             </div>
@@ -102,16 +102,6 @@ class DetailBar extends React.Component {
         );
     }
 }
-
-class CentreBar extends React.Component {
-    render() {
-        return (
-            <div id="centreBar">
-            </div>
-        );
-    }
-}
-
 
 class ButtonBar extends React.Component {
     render() {
@@ -212,8 +202,20 @@ function resize() {
 window.onresize = resize;
 
 */
+/*
 
-
+window.onresize=function(){
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    let k=container.clientWidth/container.clientHeight;
+    //camera.left=-s*k;
+    //camera.right=s*k;
+    //camera.top=s;
+    //camera.bottom=-s;
+    //
+    camera.aspect=k;
+    camera.updateProjectionMatrix();
+}
+*/
 
 
 
