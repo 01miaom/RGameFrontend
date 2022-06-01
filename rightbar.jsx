@@ -27,6 +27,9 @@ class SearchBar extends React.Component {
 }
 
 class NodeTree extends React.Component {
+    clickbutton(i){
+        console.log(i);
+    }
     submenu(i){
     //window.oncontextmenu=function(e){
     //e.preventDefault();
@@ -65,7 +68,7 @@ class NodeTree extends React.Component {
     let i = this.props.i; 
         return (
             <div>
-                <li class= {node[i].nodeClass} ><button class="node" id={node[i].id} onMouseOver={(e)=>this.submenu(i)} onMouseOut={this.coversubmenu(i)}>{node[i].name}</button>
+                <li class= {node[i].nodeClass} ><button class="node" id={node[i].id} onMouseOver={(e)=>this.submenu(i)} onMouseOut={this.coversubmenu(i)} onClick={(e)=>this.clickbutton(i)}>{node[i].name}</button>
                 </li>
                 <NodeMenu i={i}/>
             </div>
