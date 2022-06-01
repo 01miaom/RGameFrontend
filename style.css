@@ -39,7 +39,7 @@ div {
             #mainCanvas {
                 grid-column: 2;
                 grid-row: 3;
-                background-color: aqua;
+                background-color: #333;
                 /*resize: both;
                 overflow:hidden;*/
             }
@@ -300,6 +300,7 @@ input#search {
     border:0;
     height: 20px;
     color:white;
+    padding: 0 1vh;
 }
 #searchplace {
     height:35px;
@@ -312,10 +313,14 @@ input#search {
 }
 .node{
     color: whitesmoke;
+    background-color: #333;
+    border: aliceblue;
 }
 .scene{
     margin-left: 14px;
     color: yellow;
+    margin-left: 41px;
+    margin-top: 11px;
 }
 .object{
     color: red;
@@ -325,4 +330,31 @@ ul{
 }
 canvas.obit-controls-gizmo {
     position: absolute;
+}
+#nodemenu {
+    width : 60px;
+    padding: 10px;
+    visibility : hidden;
+    position : absolute;
+    background-color: #222;
+    color: aliceblue;
+    font-size: 10px;
+    display: grid;
+}
+#nodesubmenu{
+    margin:2px;
+}
+#scene1:active #nodemenu{
+    visibility : block;
+}
+#nodesubmenu:hover{
+    opacity: 60%;
+}
+.cube{
+    color: red;
+    margin-left: 60px;
+}
+.light{
+    color: blue;
+    margin-left: 60px;
 }
