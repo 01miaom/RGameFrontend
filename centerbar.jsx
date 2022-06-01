@@ -1,4 +1,4 @@
-class CentreBar extends React.Component {
+class CenterBar extends React.Component {
     render() {
         return (
             <div id="centreBar">
