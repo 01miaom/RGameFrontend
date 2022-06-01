@@ -2,7 +2,8 @@ const node = [
 {nodeClass: "scene", id: "scene1", name: "main scene"},
 {nodeClass: "cube", id: "cube1", name: "cube1"},
 {nodeClass: "cube", id: "cube2", name: "newcube"},
-{nodeClass: "light", id: "light1", name: "light1"}
+{nodeClass: "light", id: "light1", name: "light1"},
+
 ];
 
 class SearchBar extends React.Component {
@@ -16,7 +17,7 @@ class SearchBar extends React.Component {
                <input id="search" type="text" name="input"/>
                 </div>
                 <div id="tree">
-                     <ul>
+                     <ul id="limitlist">
                          {node.map((file,index) => <NodeTree i={index} key={index}/>)}
                     </ul>
                 </div>
@@ -30,6 +31,11 @@ class NodeTree extends React.Component {
     //window.oncontextmenu=function(e){
     //e.preventDefault();
     //console.log(i);
+    for(let j=0; j<node.length;j++ ){
+        if(document.getElementById('nodemenu'+j)!=null){
+        document.getElementById('nodemenu'+j).style.visibility = 'hidden';
+        }
+    }
     document.oncontextmenu = function(e){
         e.preventDefault();
     };
