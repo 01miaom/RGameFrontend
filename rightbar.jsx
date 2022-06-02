@@ -1,8 +1,8 @@
 const node = [
-{nodeClass: "scene", id: "scene1", name: "main scene",no: '0'},
-{nodeClass: "cube", id: "cube1", name: "cube1",no: '1'},
-{nodeClass: "cube", id: "cube2", name: "newcube",no: '2'},
-{nodeClass: "light", id: "light1", name: "light1",no: '3'},
+{nodeClass: "scene", id: "scene1", name: "main scene",no: '0',positionx:'0',positiony:'0',positionz:'0',scalex:'1',scaley:'1',scalez:'1',rotationx:'0',rotationy:'0',rotationz:'0'},
+{nodeClass: "cube", id: "cube1", name: "cube1",no: '1',positionx:'0',positiony:'0',positionz:'0',scalex:'1',scaley:'1',scalez:'1',rotationx:'0',rotationy:'0',rotationz:'0'},
+{nodeClass: "cube", id: "cube2", name: "newcube",no: '2',positionx:'0',positiony:'0',positionz:'0',scalex:'1',scaley:'1',scalez:'1',rotationx:'0',rotationy:'0',rotationz:'0'},
+{nodeClass: "light", id: "light1", name: "light1",no: '3',positionx:'0',positiony:'0',positionz:'0',scalex:'1',scaley:'1',scalez:'1',rotationx:'0',rotationy:'0',rotationz:'0'},
 ];
 
 function searchLite (object, keyWord) {
