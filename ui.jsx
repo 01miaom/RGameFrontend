@@ -94,15 +94,6 @@ class RightBar extends React.Component {
     }
 }
 
-class DetailBar extends React.Component {
-    render() {
-        return (
-            <div id="detailBar">
-            </div>
-        );
-    }
-}
-
 class BottonBar extends React.Component {
     render() {
         return (
