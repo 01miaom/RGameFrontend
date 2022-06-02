@@ -79,7 +79,7 @@ div {
                 grid-row: 4/6;
                 background-color: olive;
             }
-            #buttonBar {
+            #bottonBar {
                 grid-column: 1/3;
                 grid-row: 5;
                 background-color: gray;
@@ -318,7 +318,6 @@ input#search {
     margin-left: 14px;
     color: yellow;
     margin-left: 41px;
-    margin-top: 11px;
 }
 .object{
     color: red;
@@ -363,6 +362,8 @@ canvas.obit-controls-gizmo {
 #limitlist {
     overflow:scroll;
     scrollbar-width:none;
+    margin-top: 14px;
+    margin-bottom: 14px;
 }
 #run {
     transform: translate(-2px, 3px);
@@ -389,4 +390,8 @@ canvas.obit-controls-gizmo {
     font-size: 12px;
     font-family: 'Economica', sans-serif;
     margin:0;
+    margin-left: 16px;
+}
+#operate {
+    transform: translate(-4px,2px)
 }
