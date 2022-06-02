@@ -15,6 +15,10 @@ class DetailBar extends React.Component {
                     <input type="checkbox" value="cube"  id="details"></input>
                 </div>
                 <div id="detailpart">
+                    <p id="detailp">Shadow </p>
+                    <input type="checkbox" value="cube"  id="details"></input>
+                </div>
+                <div id="detailpart">
                     <p id="detailp">Position </p>
                     <p id="detailxyz">X</p>
                     <input value="0" id="detaili" style={{width: 24}}></input>
