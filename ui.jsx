@@ -38,7 +38,7 @@ class Ui extends React.Component {
                     <RightBar />
                     <CenterBar />
                     <DetailBar />
-                    <ButtonBar />
+                    <BottonBar />
             </div>
         );
     }
@@ -103,10 +103,10 @@ class DetailBar extends React.Component {
     }
 }
 
-class ButtonBar extends React.Component {
+class BottonBar extends React.Component {
     render() {
         return (
-            <div id="buttonBar">
+            <div id="bottonBar">
             </div>
         );
     }
