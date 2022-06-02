@@ -63,3 +63,4 @@ class CenterBar extends React.Component {
         );
     }
 }
+
