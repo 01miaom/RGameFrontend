@@ -1,4 +1,9 @@
 class Shape extends React.Component {
+    createCube(){
+        var obj = [{nodeClass: "scene", id: "scene1", name: "main scene",no: '0',positionx:'0',positiony:'0.5',positionz:'0',scalex:'1',scaley:'1',scalez:'1',rotationx:'0',rotationy:'0',rotationz:'0'},];
+       obj = JSON.stringify(obj); //转化为JSON字符串
+　　    localStorage.setItem("add", obj);
+    }
     render() {
         return (
               <div class="header">
@@ -10,7 +15,7 @@ class Shape extends React.Component {
 </svg>
                     
 					<ul class="left_ul_ul">
-						<li class="subcat">cube</li>
+						<li class="subcat" onClick={this.createCube}>cube</li>
 						<li class="subcat">sphere</li>
 						<li class="subcat">cylinder</li>
                         <li class="subcat">plane</li>
