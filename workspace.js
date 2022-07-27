@@ -55,7 +55,7 @@ function init() {
   } );
 
   // Obit Controls Gizmo
-  controlsGizmo = new OrbitControlsGizmo(controls, { size: 100, padding: 8 });
+  controlsGizmo = new OrbitControlsGizmo(orbit, { size: 100, padding: 8 });
 
   // Add the Gizmo to the document
     container.appendChild( controlsGizmo.domElement );
@@ -110,7 +110,7 @@ function init() {
 function animate() {
   requestAnimationFrame( animate );
   renderer.render( scene, camera );
-  controls.update();
+  orbit.update();
 }
 
 function editor() {
@@ -142,7 +142,7 @@ function editor() {
     var obj = [];
     obj = JSON.stringify(obj);
     localStorage.setItem("add", obj);
-  renderer.render( scene, camera );
+    renderer.render( scene, camera );
 }
 
 function resize() {
