@@ -9,4 +9,5 @@ The whole project can be found in:
 
 ## Credits
 
-- three.js  nunuStudio
+- three.js  
+- nunuStudio
