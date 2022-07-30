@@ -28,7 +28,6 @@ window.onresize = resize;
 //animate();
 setInterval(editor,1.0/60);
 
-
 function init() {
   // renderer
   const container = document.getElementById( 'mainCanvas' );
