@@ -9,10 +9,8 @@ div {
     minmax(20px, 40px)
     minmax(150px, 10fr)
     minmax(150px, 4fr);/*use react to dynamic modified https://letsbuildui.dev/articles/resizable-tables-with-react-and-css-grid*/
-  /*grid-template-columns: 5% 65% 30%;*/
-  gap: 1px;
-  /*grid-auto-rows: minmax(15px, auto);*/
-   grid-template-rows:
+    gap: 1px;
+    grid-template-rows:
     minmax(20px, 1fr)
     minmax(20px, 1fr)
     minmax(200px, 20fr)
@@ -191,7 +189,7 @@ div {
             .bar {
                 background: gray;
                 border-radius: 2px;
-                padding-inline:25px;
+                padding-left:30px;
                 font-size: 12px;
 	            font-family: 'Economica', sans-serif;
                 color:#fff;
@@ -200,8 +198,14 @@ div {
             .bar:hover {
                 background-color: darkgray;
             }
+            #barclose {
+                padding-right: 6px;
+                padding-left: 18px;
+                color: #ffffff;
+            }
             #barclose:hover {
                 opacity: 0.7;
+                color:#333;
             }
             #topBar {
                 grid-column: 1/3;
@@ -469,6 +473,7 @@ input[type=checkbox]:checked::after{
             grid-row: 5;
             background-color: #333;
             visibility: visible;
+            overflow:scroll;
 }
 #animationPage {
             grid-column: 1/3;
@@ -484,6 +489,9 @@ input[type=checkbox]:checked::after{
 }
 #materialcards {
             padding: 20px;
+            display: table-caption;
+            width: 40px;
+            height: 60px;
 }
 #centersearch {
     background-color: #333;
@@ -502,4 +510,47 @@ input[type=checkbox]:checked::after{
     top:0;
     color: wheat;
     transform: translate(6px, 2px);
+}
+#materialname{
+    margin: 2px;
+    color: #eee;
+    font-size: 12px;
+    transform: translate(-6px, 0px);
+    text-align: center;
+}
+#assetsPage{
+    display: block;
+}
+#line{
+    display: flex;
+}
+#documentcards {
+            padding: 20px;
+            display: table-caption;
+            width: 40px;
+            height: 60px;
+}
+#imagecards {
+            padding: 20px;
+            display: table-caption;
+            width: 40px;
+            height: 60px;
+}
+#modelcards {
+            padding: 20px;
+            display: table-caption;
+            width: 40px;
+            height: 60px;
+}
+#videocards {
+            padding: 20px;
+            display: table-caption;
+            width: 40px;
+            height: 60px;
+}
+#audiocards {
+            padding: 20px;
+            display: table-caption;
+            width: 40px;
+            height: 60px;
 }
