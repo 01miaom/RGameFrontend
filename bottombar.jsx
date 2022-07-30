@@ -21,7 +21,7 @@ class BottonBarAssets extends React.Component {
                 <Material />
                 <Image />
                 <Material />
-                <Movie />
+                <Audio />
                 <Folder />
                 <Material />
                 <Video />
