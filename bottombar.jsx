@@ -11,29 +11,6 @@ let currentDocumentTree = [
 ];
 
 
-function type2element(type){
-    return "<"+type+" />"
-}
-
-function gen(){
-let documentView = "";
-
-for(let i=0;i<currentDocumentTree.length;i++){
-    if(i%8==0) documentView+='<div id="line">'
-    documentView+=type2element(currentDocumentTree[i].type);
-    if(i%8==7) documentView+="</div>"
-}
-
-documentView+="</div>"
-    console.log(1);
-    if(document.getElementById("assetsPage")){
-        console.log(2);
-     document.getElementById("assetsPage").innerHTML=documentView;
-    }
-}
-
-
-
 
 class BottonBarAssets extends React.Component {
     render() {
