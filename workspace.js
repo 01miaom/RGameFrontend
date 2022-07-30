@@ -23,10 +23,18 @@ let cameraPersp, cameraOrtho, currentCamera;
 let control, orbit;
 let mesh, renderer, scene, camera, controls, controlsGizmo;
 
-setTimeout(function() { init(); }, 1000); 
+let theProcess = setInterval(process,100);
+
+function process(){
+if(document.getElementById( 'mainCanvas' )){
+init()
 window.onresize = resize;
 //animate();
+//editor()
+clearInterval(theProcess);
 setInterval(editor,1.0/60);
+}
+}
 
 function init() {
   // renderer
@@ -122,6 +130,24 @@ function editor() {
   });
     if(add.length>0){
         for(let i=0; i<add.length; i++){
+	    if(add[i].nodeClass=='sphere'){
+            var geometry = new THREE.SphereGeometry( 0.5, 10, 10 );
+            }
+            if(add[i].nodeClass=='cube'){
+            var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+            }
+            if(add[i].nodeClass=='cylinder'){
+            var geometry = new THREE.CylinderGeometry( 0.5, 0.5, 1, 32);
+            }
+            if(add[i].nodeClass=='cone'){
+            var geometry = new THREE.ConeGeometry( 0.5, 1, 32 );
+            }
+            /*if(add[i].nodeClass=='capsule'){
+            var geometry = new THREE.CapsuleGeometry( 0.5, 1, 4, 8 );
+            }*/
+            if(add[i].nodeClass=='plane'){
+            var geometry = new THREE.PlaneGeometry( 10, 10 );
+            }
             window[add[i].id] = new THREE.Mesh( geometry, material );
             window[add[i].id].position.set(
                 add[i].positionx,
