@@ -5,12 +5,6 @@ let object = [
 {nodeClass: "light", id: "light1", name: "light1",no: '3',positionx:'2',positiony:'0',positionz:'0',scalex:'1',scaley:'1',scalez:'1',rotationx:'0',rotationy:'0',rotationz:'0'},
 ];
 
-if(localStorage.hasOwnProperty("add")==false){
-    var obj = [];
-       obj = JSON.stringify(obj); 
-　　    localStorage.setItem("add", obj);
-}
-
 import * as THREE from "./viewhelper/three.module.js";
 import { GUI } from "./viewhelper/lib.js";
 
@@ -23,7 +17,16 @@ let cameraPersp, cameraOrtho, currentCamera;
 let control, orbit;
 let mesh, renderer, scene, camera, controls, controlsGizmo;
 
+const mouse = new THREE.Vector2(), raycaster = new THREE.Raycaster();
+const objects = [];
+
 let theProcess = setInterval(process,100);
+
+if(localStorage.hasOwnProperty("add")==false){
+    var obj = [];
+       obj = JSON.stringify(obj); 
+　　    localStorage.setItem("add", obj);
+}
 
 function process(){
 if(document.getElementById( 'mainCanvas' )){
@@ -60,12 +63,16 @@ function init() {
   control.addEventListener( 'dragging-changed', function ( event ) {
 					orbit.enabled = ! event.value;
   } );
+	
+//drag gizmo
+  controls = new DragControls( [ ... objects ], camera, renderer.domElement );
+  controls.addEventListener( 'drag', render );
 
   // Obit Controls Gizmo
   controlsGizmo = new OrbitControlsGizmo(orbit, { size: 100, padding: 8 });
 
   // Add the Gizmo to the document
-    container.appendChild( controlsGizmo.domElement );
+  container.appendChild( controlsGizmo.domElement );
 
   // ambient light
   scene.add( new THREE.AmbientLight( 0x222222 ) );
@@ -74,6 +81,10 @@ function init() {
   var light = new THREE.DirectionalLight( 0xffffff, 1 );
   light.position.set( 2,2, 0 );
   scene.add( light );
+	
+	//add group, use for test
+	group = new THREE.Group();
+	scene.add( group );
 
   // axes Helper
   const axesHelper = new THREE.AxesHelper( 15 );
@@ -96,8 +107,7 @@ function init() {
   mesh = new THREE.Mesh( geometry, material );
   mesh.position.set(0, 0.5, 0);
   scene.add( mesh );
-  control.attach( mesh );
-  scene.add( control );
+
   
   for(let i=0; i<object.length; i++){
       window[object[i].id] = new THREE.Mesh( geometry, material );
@@ -162,6 +172,7 @@ function editor() {
                 add[i].rotationy,
                 add[i].rotationz);
             scene.add(window[add[i].id]);
+	    objects.push( window[add[i].id] );
         }
     }
     var obj = [];
@@ -273,6 +284,47 @@ window.addEventListener( 'keyup', function ( event ) {
 							break;
 					}
 				} );
+
+
+function onClick( event ) {
+				event.preventDefault();
+                		let enableSelection=true;
+
+				if ( enableSelection === true ) {
+
+					const draggableObjects = controls.getObjects();
+					draggableObjects.length = 0;
+
+					mouse.x = ((event.clientX - mainCanvas.getBoundingClientRect().left) / mainCanvas.offsetWidth) * 2 - 1;
+					mouse.y = -((event.clientY - mainCanvas.getBoundingClientRect().top) / mainCanvas.offsetHeight) * 2 + 1;
+
+					raycaster.setFromCamera( mouse, camera );
+
+					const intersections = raycaster.intersectObjects( objects, true );
+
+					if ( intersections.length > 0 ) {
+						const object = intersections[ 0 ].object;
+   
+                        			control.attach(object );
+                        			scene.add( control );
+						controls.transformGroup = true;
+					}else{
+                        			control.detach(mesh);
+                   			}
+
+					if ( group.children.length === 0 ) {
+						controls.transformGroup = false;
+					}
+				}
+				render();
+			}
+
+
+function render() {
+
+				renderer.render( scene, camera );
+
+			}
 
 
 export default {resize}
