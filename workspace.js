@@ -7,14 +7,14 @@ let object = [
 
 import * as THREE from "./viewhelper/three.module.js";
 import { GUI } from "./viewhelper/lib.js";
-
 import { OrbitControls } from "./viewhelper/OrbitControls.js";
 import { OrbitControlsGizmo } from "./viewhelper/OrbitControlsGizmo.js";
 import { TransformControls } from './Lib/TransformControls.js';
 import { STLLoader } from './Lib/STLLoader.js';
+import { DragControls } from './Lib/DragControls.js';
 
 let cameraPersp, cameraOrtho, currentCamera;
-let control, orbit;
+let control, orbit, group;
 let mesh, renderer, scene, camera, controls, controlsGizmo;
 
 const mouse = new THREE.Vector2(), raycaster = new THREE.Raycaster();
