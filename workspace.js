@@ -56,8 +56,9 @@ function init() {
 
   //drag control
   orbit = new OrbitControls( camera, renderer.domElement );
-				orbit.update();
-				orbit.addEventListener( 'change', editor );
+  orbit.update();
+  orbit.addEventListener( 'change', editor );
+  document.addEventListener( 'click', onClick );
   control = new TransformControls( camera, renderer.domElement );
   control.addEventListener( 'change', editor );
   control.addEventListener( 'dragging-changed', function ( event ) {
