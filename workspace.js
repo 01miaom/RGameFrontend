@@ -114,6 +114,7 @@ function init() {
       window[object[i].id] = new THREE.Mesh( geometry, material );
       window[object[i].id].position.set(object[i].positionx, object[i].positiony, object[i].positionz);
       scene.add(window[object[i].id]);
+      objects.push( window[object[i].id] );
   }
 
   // GUI
