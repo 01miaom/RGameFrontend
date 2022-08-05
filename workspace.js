@@ -289,13 +289,6 @@ window.addEventListener( 'keyup', function ( event ) {
 
 
 function onClick( event ) {
-				event.preventDefault();
-                		let enableSelection=true;
-
-				if ( enableSelection === true ) {
-
-					const draggableObjects = controls.getObjects();
-					draggableObjects.length = 0;
 
 					mouse.x = ((event.clientX - mainCanvas.getBoundingClientRect().left) / mainCanvas.offsetWidth) * 2 - 1;
 					mouse.y = -((event.clientY - mainCanvas.getBoundingClientRect().top) / mainCanvas.offsetHeight) * 2 + 1;
@@ -309,16 +302,12 @@ function onClick( event ) {
    
                         			control.attach(object );
                         			scene.add( control );
-						controls.transformGroup = true;
+		
 					}else{
                         			control.detach(mesh);
                    			}
 
-					if ( group.children.length === 0 ) {
-						controls.transformGroup = false;
-					}
-				}
-				render();
+				
 			}
 
 
