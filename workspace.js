@@ -332,6 +332,11 @@ function onTouch( event ) {
 
 
 
+function render() {
+			renderer.render( scene, camera );
+			}
+
+
 export default {resize}
 
 
