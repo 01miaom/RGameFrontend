@@ -59,6 +59,7 @@ function init() {
   orbit.update();
   orbit.addEventListener( 'change', editor );
   document.getElementById('mainCanvas').addEventListener( 'click', onClick );
+  document.getElementById('mainCanvas').addEventListener( 'touchstart', onTouch );// touch screen
   control = new TransformControls( camera, renderer.domElement );
   control.addEventListener( 'change', editor );
   control.addEventListener( 'dragging-changed', function ( event ) {
@@ -289,7 +290,6 @@ window.addEventListener( 'keyup', function ( event ) {
 
 
 function onClick( event ) {
-
 					mouse.x = ((event.clientX - mainCanvas.getBoundingClientRect().left) / mainCanvas.offsetWidth) * 2 - 1;
 					mouse.y = -((event.clientY - mainCanvas.getBoundingClientRect().top) / mainCanvas.offsetHeight) * 2 + 1;
 
@@ -307,15 +307,29 @@ function onClick( event ) {
                         			control.detach(mesh);
                    			}
 
-				
+			}
+
+function onClick( event ) {
+					mouse.x = ((event.targetTouches[0].pageX - mainCanvas.getBoundingClientRect().left) / mainCanvas.offsetWidth) * 2 - 1;
+					mouse.y = -((event.targetTouches[0].pageY - mainCanvas.getBoundingClientRect().top) / mainCanvas.offsetHeight) * 2 + 1;
+
+					raycaster.setFromCamera( mouse, camera );
+
+					const intersections = raycaster.intersectObjects( objects, true );
+
+					if ( intersections.length > 0 ) {
+						const object = intersections[ 0 ].object;
+   
+                        			control.attach(object );
+                        			scene.add( control );
+		
+					}else{
+                        			control.detach(mesh);
+                   			}
+
 			}
 
 
-function render() {
-
-				renderer.render( scene, camera );
-
-			}
 
 
 export default {resize}
