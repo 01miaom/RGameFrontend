@@ -309,7 +309,7 @@ function onClick( event ) {
 
 			}
 
-function onClick( event ) {
+function onTouch( event ) {
 					mouse.x = ((event.targetTouches[0].pageX - mainCanvas.getBoundingClientRect().left) / mainCanvas.offsetWidth) * 2 - 1;
 					mouse.y = -((event.targetTouches[0].pageY - mainCanvas.getBoundingClientRect().top) / mainCanvas.offsetHeight) * 2 + 1;
 
