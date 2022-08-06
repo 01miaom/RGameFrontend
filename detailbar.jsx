@@ -55,7 +55,7 @@ class DetailBar extends React.Component {
                     <input value="0" id="detaili" style={{width: 24}}></input>
                 </div>
                 <div id="detailpart">
-                    <p id="detailp">Locks </p>
+                    <p id="detailp">Locked </p>
                     <input type="checkbox" value="cube"  id="details"></input>
                 </div>
             </div>
