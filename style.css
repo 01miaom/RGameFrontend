@@ -554,3 +554,49 @@ input[type=checkbox]:checked::after{
             width: 40px;
             height: 60px;
 }
+#detailpart {
+            overflow: scroll;
+}
+#uuid {
+            overflow: scroll;
+}
+#detailp {
+            width:6px;
+            padding-right: 50px;
+}
+#detaili {
+            width:26px !important;
+}
+div#settingClass {
+    color: floralwhite;
+    margin: 10px;
+    margin-left: 30px;
+}
+div#settingElement {
+    color: floralwhite;
+    font-size: 14px;
+    background-color: #444;
+    padding: 8px;
+    padding-left: 30px;
+}
+#closeWindow {
+    color:azure;
+}
+
+hr.breakLine {
+    /*width: 80%;*/
+    margin: 0;
+    margin-left: 1.5em;
+    color: #987cb9;
+    opacity: 0.2;
+}
+#settingPage {
+    background-color: #444;
+}
+.floatwindow {
+    border-radius: 6px;
+}
+#floatPage {
+    height: 360px;
+    overflow: scroll;
+}
