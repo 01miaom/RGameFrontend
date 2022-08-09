@@ -68,7 +68,7 @@ class Setting extends React.Component {
                     <div id="settingElement">Language </div>
                     <hr class="breakLine"/>
                     <div id="settingElement">About </div>
-                </div>
+                </div> 
                 <div id="settingClass">Advanced</div>
                 <div id="settingPage">
                     <div id="settingElement">Plugins </div>
