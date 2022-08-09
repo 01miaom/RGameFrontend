@@ -59,9 +59,34 @@ class Setting extends React.Component {
     render() {
         return (
             <div class="floatwindow" draggable="true" id="floatwindow">
-                <p id="closeWindow" onClick={this.closewindow}>x</p>
+                <div id="closeBar"><p id="closeWindow" onClick={this.closewindow}>×</p></div>
+                <div id="floatPage">
+                <div id="settingClass">General</div>
+                <div id="settingPage">
+                    <div id="settingElement">Dark Mode </div>
+                    <hr class="breakLine"/>
+                    <div id="settingElement">Language </div>
+                    <hr class="breakLine"/>
+                    <div id="settingElement">About </div>
+                </div>
+                <div id="settingClass">Advanced</div>
+                <div id="settingPage">
+                    <div id="settingElement">Plugins </div>
+                    <hr class="breakLine"/>
+                    <div id="settingElement">Angle </div>
+                    <hr class="breakLine"/>
+                    <div id="settingElement">Unit </div>
+                </div>
+                <div id="settingClass">Code Page</div>
+                <div id="settingPage">
+                    <div id="settingElement">Font Size </div>
+                    <hr class="breakLine"/>
+                    <div id="settingElement">Heightlight Color</div>
+                </div>
+                </div>
             </div>
         );
     }
 }
+
 
