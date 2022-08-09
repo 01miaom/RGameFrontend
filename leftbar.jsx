@@ -1,31 +1,31 @@
 class Shape extends React.Component {
     createCube(){
-        var obj = [{nodeClass: "cube", id: "scene1", name: "main scene",no: '0',positionx:0,positiony:6,positionz:0,scalex:'1',scaley:'1',scalez:'1',rotationx:'0',rotationy:'0',rotationz:'0'},];
+        var obj = [{nodeClass: "cube", id: "scene1", name: "main scene",no: '0',positionx:0,positiony:6,positionz:0,scalex:1,scaley:1,scalez:1,rotationx:0,rotationy:0,rotationz:0},];
        obj = JSON.stringify(obj);
 　　    localStorage.setItem("add", obj);
     }
     createSphere(){
-        var obj = [{nodeClass: "sphere", id: "scene1", name: "main scene",no: '0',positionx:4,positiony:6,positionz:0,scalex:'1',scaley:'1',scalez:'1',rotationx:'0',rotationy:'0',rotationz:'0'},];
+        var obj = [{nodeClass: "sphere", id: "scene1", name: "main scene",no: '0',positionx:4,positiony:6,positionz:0,scalex:1,scaley:1,scalez:1,rotationx:0,rotationy:0,rotationz:0},];
        obj = JSON.stringify(obj);
 　　    localStorage.setItem("add", obj);
     }
     createCylinder(){
-        var obj = [{nodeClass: "cylinder", id: "scene1", name: "main scene",no: '0',positionx:4,positiony:6,positionz:2,scalex:'1',scaley:'1',scalez:'1',rotationx:'0',rotationy:'0',rotationz:'0'},];
+        var obj = [{nodeClass: "cylinder", id: "scene1", name: "main scene",no: '0',positionx:4,positiony:6,positionz:2,scalex:1,scaley:1,scalez:1,rotationx:0,rotationy:0,rotationz:0},];
        obj = JSON.stringify(obj);
 　　    localStorage.setItem("add", obj);
     }
     createCone(){
-        var obj = [{nodeClass: "cone", id: "scene1", name: "main scene",no: '0',positionx:6,positiony:6,positionz:2,scalex:'1',scaley:'1',scalez:'1',rotationx:'0',rotationy:'0',rotationz:'0'},];
+        var obj = [{nodeClass: "cone", id: "scene1", name: "main scene",no: '0',positionx:6,positiony:6,positionz:2,scalex:1,scaley:1,scalez:1,rotationx:0,rotationy:0,rotationz:0},];
        obj = JSON.stringify(obj);
 　　    localStorage.setItem("add", obj);
     }
     createCapsule(){
-        var obj = [{nodeClass: "capsule", id: "scene1", name: "main scene",no: '0',positionx:6,positiony:6,positionz:6,scalex:'1',scaley:'1',scalez:'1',rotationx:'0',rotationy:'0',rotationz:'0'},];
+        var obj = [{nodeClass: "capsule", id: "scene1", name: "main scene",no: '0',positionx:6,positiony:6,positionz:6,scalex:1,scaley:1,scalez:1,rotationx:0,rotationy:0,rotationz:0},];
        obj = JSON.stringify(obj);
 　　    localStorage.setItem("add", obj);
     }
     createPlane(){
-        var obj = [{nodeClass: "plane", id: "scene1", name: "main scene",no: '0',positionx:6,positiony:0,positionz:6,scalex:'1',scaley:'1',scalez:'1',rotationx:'-1.5708',rotationy:'0',rotationz:'0'},];
+        var obj = [{nodeClass: "plane", id: "scene1", name: "main scene",no: '0',positionx:6,positiony:0,positionz:6,scalex:1,scaley:1,scalez:1,rotationx:-1.5708,rotationy:0,rotationz:0},];
        obj = JSON.stringify(obj);
 　　    localStorage.setItem("add", obj);
     }
