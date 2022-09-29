@@ -28,6 +28,7 @@ div {
                 display: block;
                 margin: 0px;
                 background-color: #333;
+		position:fixed;
             }
             #leftBar {
                 grid-column: 1;
