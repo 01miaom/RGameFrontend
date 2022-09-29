@@ -12,14 +12,8 @@ class Bar extends React.Component {
     render() {
         return (
             <div id="topBar">
-                <div class="bar"  onClick={this.clickButton1}><div>Project1</div> <div id="barclose">×</div></div>
-                  <div class="bar">Project2 <div id="barclose">×</div></div>
+                <div class="bar"  onClick={this.clickButton1}><div>Scene1</div> <div id="barclose">×</div></div>
                 <div class="bar" onClick={this.clickButton2}>code.R <div id="barclose">×</div></div>
-                <div class="bar">Scene <div id="barclose">×</div></div>
-               <div class="bar">Project1 <div id="barclose">×</div></div>
-                  <div class="bar">Project2 <div id="barclose">×</div></div>
-                <div class="bar">code.R <div id="barclose">×</div></div>
-                <div class="bar">Scene <div id="barclose">×</div></div>
             </div>
         );
     }
