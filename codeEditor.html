@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=gbk" http-equiv="content-type">
+          <script  src = "Lib/codemirror.js" > </script> 
+    <link  rel = "stylesheet"  href = "Lib/codemirror.css" >
+          <script src="Lib/javascript/javascript.js"></script>
+      <link href="Lib/midnight.css" rel="stylesheet" type="text/css"/>
+    <title></title>
+      <style>
+body {
+    margin: 0;
+}
+
+      </style>
+  </head>
+  <body>
+      <div id="codeEditor"></div>
+  </body>
+     <script>
+        var myCodeMirror = CodeMirror(document.getElementById("codeEditor"), {
+        value: "function myScript(){return 100;}\n",
+        mode:  "javascript",
+        lineNumbers:true,
+         matchBrackets:true,
+         lineWrapping:true,
+         foldGutter: true,
+        theme:'midnight',
+         gutters:["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+        });
+        console.log("codeeditor work");
+//在父页面用下列代码获取代码值
+         //document.getElementById('codeFrame').contentWindow.myCodeMirror.getValue()
+      </script>
+</html>
