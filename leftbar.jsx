@@ -65,8 +65,9 @@ class Shape extends React.Component {
                     
 					<ul class="left_ul_ul">
 						<li class="subcat">Point</li>
+						<li class="subcat">Area</li>
 						<li class="subcat">Ambient</li>
-                        <li class="subcat">envir</li>
+                        			<li class="subcat">envir</li>
 					</ul>
 				</li>
                 <li class="left_ul_physical">
@@ -79,7 +80,7 @@ class Shape extends React.Component {
 						<li class="subcat">cube</li>
 						<li class="subcat">sphere</li>
 						<li class="subcat">cylinder</li>
-                        <li class="subcat">plane</li>
+                        			<li class="subcat">plane</li>
 					</ul>
 				</li>
                 <li class="left_ul_camera">
