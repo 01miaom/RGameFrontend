@@ -29,6 +29,7 @@ class Ui extends React.Component {
                     <TopBar />
                     <LeftBar/>
                     <MainCanvas />
+                    <CodeEditor />
                     <RightBar />
                     <CenterBar />
                     <DetailBar />
@@ -64,6 +65,17 @@ class MainCanvas extends React.Component {
     render() {
         return (
              <div id= "mainCanvas">
+            </div>
+            
+        );
+    }
+}
+
+class CodeEditor extends React.Component {
+    render() {
+        return (
+             <div id= "codeEditor">
+                <iframe src="codeEditor.html" width='100%' height='100%' id="codeFrame"></iframe>
             </div>
             
         );
