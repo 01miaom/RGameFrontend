@@ -1,18 +1,18 @@
 class CenterBar extends React.Component {
     clickButton1(){
-        console.log("a");
+        console.log("change to assetspage");
         document.getElementById('animationPage').style.visibility = 'hidden';
         document.getElementById('consolePage').style.visibility = 'hidden';
         document.getElementById('assetsPage').style.visibility = 'visible';      
     }
     clickButton2(){
-        console.log("b");
+        console.log("change to animationpage");
         document.getElementById('assetsPage').style.visibility = 'hidden';
         document.getElementById('consolePage').style.visibility = 'hidden';
         document.getElementById('animationPage').style.visibility = 'visible';      
     }
     clickButton3(){
-        console.log("c");
+        console.log("change to consolepage");
         document.getElementById('animationPage').style.visibility = 'hidden';
         document.getElementById('assetsPage').style.visibility = 'hidden';
         document.getElementById('consolePage').style.visibility = 'visible';      
