@@ -600,3 +600,7 @@ hr.breakLine {
     height: 360px;
     overflow: scroll;
 }
+iframe {
+    border-width: 0px;
+    background-color: #292929;
+}
