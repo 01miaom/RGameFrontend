@@ -109,6 +109,7 @@ function init() {
   mesh = new THREE.Mesh( geometry, material );
   mesh.position.set(0, 0.5, 0);
   scene.add( mesh );
+  objects.push( mesh );
 
   
   for(let i=0; i<object.length; i++){
