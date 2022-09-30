@@ -3,17 +3,22 @@ class File extends React.Component {
         document.getElementById('cover').style.display='block';
         document.getElementById('floatwindow').style.display='block';
     }
+    fileImport(){
+        document.getElementById('cover').style.display='block';
+        document.getElementById('uploadwindow').style.display='block';
+    }
     render() {
         return (
         <div class="header">
                 <Setting />
+		<Upload />
                 <div id="cover" class="cover"></div>
 			<ul class="header_ul">
 				<li class="header_ul_file">File
 					<ul class="header_ul_ul">
 						<li>New</li>
 						<li>Save</li>
-						<li>Import</li>
+						<li onClick={this.fileImport}>Import</li>
                         <li>Export</li>
                         <li onClick={this.openwindow}>Setting</li>
 					</ul>
@@ -89,4 +94,41 @@ class Setting extends React.Component {
     }
 }
 
+class Upload extends React.Component {
+    closewindow(){
+        document.getElementById('cover').style.display='none';
+        document.getElementById('uploadwindow').style.display='none';       
+    }
+    changepic(){
+        const content = document.querySelector('.content');
+        const [file] = document.querySelector('input[type=file]').files;
+        const reader = new FileReader();
+
+        reader.addEventListener("load", () => {
+
+            localStorage.setItem("stl", reader.result)
+        }, false);
+
+        if (file) {
+            reader.readAsText(file);
+        }
+        
+    }
+    render() {
+        return (
+            <div class="floatwindow" draggable="true" id="uploadwindow">
+                <div id="closeBar"><p id="closeWindow" onClick={this.closewindow}>×</p></div>
+                <div id="floatPage">
+                    <form id="upload-form" action="upload.php" method="post" enctype="multipart/form-data" >
+                        <p id="hint">STL model:</p>
+　　　                 <input type="file" id="file" onChange={this.changepic} />
+                        <label for="file" id="uploadbutton">Click me</label>
+                        <br />
+                        <p class="content"></p>
+                    </form>
+                </div>
+            </div>
+        );
+    }
+}
 
