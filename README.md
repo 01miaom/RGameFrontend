@@ -1,7 +1,7 @@
 ## RGameFrontend (No finish yet)
 RGame Frontend
 
-![](docs/UI3.png)
+![](docs/UI2.png)
 
 Can be preview in: https://01miaom.github.io/RGameFrontend/
 
