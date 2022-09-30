@@ -256,6 +256,12 @@ div {
             .left_ul_cube:hover .left_ul_ul {
 	           display: block;
             }
+	    .left_ul_script .left_ul_ul {
+	           display: none;
+            }
+            .left_ul_script:hover .left_ul_ul {
+	           display: block;
+            }
             .left_ul_light .left_ul_ul {
 	           display: none;
             }
