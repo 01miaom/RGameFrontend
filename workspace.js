@@ -181,6 +181,26 @@ function editor() {
     var obj = [];
     obj = JSON.stringify(obj);
     localStorage.setItem("add", obj);
+	
+	//add stl
+	if(localStorage.hasOwnProperty("stl")==true){
+　　    var tmpdata = localStorage.getItem("stl");
+        localStorage.removeItem("stl");
+        let loader = new STLLoader();
+        console.log("a");
+        var geometry = loader.parse( tmpdata);
+        console.log(geometry);
+        const material = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200 } );
+					const mesh = new THREE.Mesh( geometry, material );
+
+					mesh.position.set( 0, 2, 0.6 );
+					mesh.rotation.set(  - Math.PI / 2, 0,0 );
+					mesh.scale.set( 0.5, 0.5, 0.5 );
+					mesh.castShadow = true;
+					mesh.receiveShadow = true;
+
+					scene.add( mesh );
+	//add stl finish 
     renderer.render( scene, camera );
 }
 
