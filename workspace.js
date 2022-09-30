@@ -200,6 +200,7 @@ function editor() {
 					mesh.receiveShadow = true;
 
 					scene.add( mesh );
+					objects.push( mesh );
 	}
 	//add stl finish 
     renderer.render( scene, camera );
