@@ -131,7 +131,7 @@ class Upload extends React.Component {
                 <div id="closeBar"><p id="closeWindow" onClick={this.closewindow}>×</p></div>
                 <div id="floatPage">
                     <form id="upload-form" action="upload.php" method="post" enctype="multipart/form-data" >
-                        <p id="hint">STL model:</p>
+                        <p id="hint">STL model(Ascii): </p>
 　　　                 <input type="file" id="file" onChange={this.changepic} />
                         <label for="file" id="uploadbutton">Click me</label>
                         <br />
