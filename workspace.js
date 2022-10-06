@@ -1,3 +1,7 @@
+/*
+*using for test
+*it will be delete later
+*/
 let object = [
 {nodeClass: "scene", id: "scene1", name: "main scene",no: '0',positionx:2,positiony:0,positionz:0,scalex:'1',scaley:'1',scalez:'1',rotationx:'0',rotationy:'0',rotationz:'0'},
 {nodeClass: "cube", id: "cube1", name: "cube1",no: '1',positionx:0,positiony:0,positionz:2,scalex:'1',scaley:'1',scalez:'1',rotationx:'0',rotationy:'0',rotationz:'0'},
