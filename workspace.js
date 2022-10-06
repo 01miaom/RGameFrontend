@@ -20,6 +20,10 @@ let mesh, renderer, scene, camera, controls, controlsGizmo;
 const mouse = new THREE.Vector2(), raycaster = new THREE.Raycaster();
 const objects = [];
 
+/*
+*Load the workspace
+*There may be multiple workspace page in here, such as Edit, Animation, Run
+*/
 let theProcess = setInterval(process,100);
 
 if(localStorage.hasOwnProperty("add")==false){
@@ -134,6 +138,11 @@ function animate() {
   orbit.update();
 }
 
+/*
+*Add some simple objects
+*Add the clickable attribute of the object (only in the Ediotr workspace)
+*/
+
 function editor() {
   let add=JSON.parse(localStorage.getItem("add"));
   var geometry = new THREE.BoxGeometry( 1, 1, 1 );
@@ -207,8 +216,9 @@ function editor() {
     renderer.render( scene, camera );
 }
 
+//resize window when window change size
 function resize() {
-    const container = document.getElementById( 'mainCanvas' );
+  const container = document.getElementById( 'mainCanvas' );
   renderer.setSize( container.clientWidth, container.clientHeight );
   camera.aspect = ( container.clientWidth/container.clientHeight);
   camera.updateProjectionMatrix();
