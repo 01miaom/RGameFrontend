@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			body { margin: 0; }
+		</style>
+         <link href="./texture_demo.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+        <div class="wrapper">
+        <div id="textureCanvas"></div>
+        <div id="textureDetail"></div>
+        <div id="textureModified">
+            <div>
+                Roughness <input type="range" min="0" max="100" value="70"/></div>
+            <div>
+                Metaleness <input type="range" min="0" max="100" value="70"/></div>
+            <div>
+                Color <input type="color" value="#e66465"/></div>
+
+        
+        </div>
+        </div>
+        
+		<script src="three.js"></script>
+		<script>
+            let cameraPersp, cameraOrtho, currentCamera;
+            let control, orbit, group;
+            //let mesh, renderer, scene, camera, controls, controlsGizmo;
+			const scene = new THREE.Scene();
+			const camera = new THREE.PerspectiveCamera( 75, document.getElementById("textureCanvas").clientWidth/ document.getElementById("textureCanvas").clientHeight, 0.1, 1000 );
+
+			const renderer = new THREE.WebGLRenderer();
+            renderer.setClearColor(new THREE.Color(0x4c4b4b));
+			renderer.setSize( document.getElementById("textureCanvas").clientWidth, document.getElementById("textureCanvas").clientHeight );
+			document.getElementById("textureCanvas").appendChild( renderer.domElement );
+            
+            var light = new THREE.DirectionalLight( 0xffffff, 1 );
+            light.position.set( 2,2, 0 );
+            //scene.add( light );
+            scene.add( new THREE.AmbientLight( 0x222222 ) );
+            
+            const rectLight1 = new THREE.RectAreaLight( 0xff0000, 5, 4, 10 );
+            rectLight1.position.set( - 5, 5, 5 );
+            scene.add( rectLight1 );
+            
+			const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+            //const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			const material = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0xff11ff, shininess: 200 } );
+			const cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+
+			camera.position.z = 5;
+            camera.position.x = 1;
+            camera.position.y = 1;
+
+			function animate() {
+				requestAnimationFrame( animate );
+                window.onresize = resize;
+				renderer.render( scene, camera );
+			};
+
+			animate();
+            
+            function resize() {
+                const container = document.getElementById( 'textureCanvas' );
+                renderer.setSize( container.clientWidth, container.clientHeight );
+                camera.aspect = ( container.clientWidth/container.clientHeight);
+                camera.updateProjectionMatrix();
+            }
+
+		</script>
+	</body>
+</html>
