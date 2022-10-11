@@ -1,0 +1,42 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+#textureDetail {
+    grid-row: 2 / 5;
+    grid-column: 1;
+    background: #4c4b4b;  
+}
+#textureModified {
+    grid-column: 2 / 3;
+    grid-row: 1 / 5;
+    float: left;
+    background: #4c4b4b;
+    overflow: scroll;
+    color: aliceblue;
+    font-size: 12px;
+    padding: 20px;
+}
+#textureControl {
+    margin:0 auto;
+    overflow:hidden;
+}
+#textureCanvas {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    height: 200px;
+}
+input[type="range"] {
+    color: white;
+    margin: 12px;
+}
+input[type="color"] {
+    width: 130px;
+    height: 22px;
+    transform: translate(32px, 2px);
+    padding: 0;
+    margin: 12px;
+}
