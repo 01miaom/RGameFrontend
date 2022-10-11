@@ -30,6 +30,7 @@ class Ui extends React.Component {
                     <LeftBar/>
                     <MainCanvas />
                     <CodeEditor />
+                    <Texture />
                     <RightBar />
                     <CenterBar />
                     <DetailBar />
@@ -97,6 +98,16 @@ class RightBar extends React.Component {
         return (
             <div id="rightBar">
                 <SearchBar />
+            </div>
+        );
+    }
+}
+
+class Texture extends React.Component {
+    render() {
+        return (
+            <div id="texture">
+                <iframe loading="lazy" src="texture_demo.html" width='100%' height='100%'></iframe>
             </div>
         );
     }
