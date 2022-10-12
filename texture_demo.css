@@ -1,7 +1,7 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+  grid-gap: 6px;
   grid-auto-rows: minmax(100px, auto);
 }
 
@@ -32,11 +32,26 @@
 input[type="range"] {
     color: white;
     margin: 12px;
+    -webkit-appearance: none;
+    height: 2px;
+    background: yellowgreen;
+    transform: translate(15px, 0px);
 }
 input[type="color"] {
     width: 130px;
-    height: 22px;
-    transform: translate(32px, 2px);
+    height: 20px;
+    transform: translate(47px, 2px);
     padding: 0;
+    margin: 12px;
+    /*transform: translate(15px, 0px);*/
+}
+#opacity {
+    transform: translate(34px,0px);
+}
+#geometrySelect {
+    transform: translate(20px,0px);
+    width: 130px;
+    color: yellowgreen;
+    background: border-box;
     margin: 12px;
 }
