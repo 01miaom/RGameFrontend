@@ -6,6 +6,27 @@
 			body { margin: 0; }
 		</style>
          <link href="./texture_demo.css" rel="stylesheet" type="text/css"/>
+        <script>
+       function fileChange(e) {
+           
+           
+        //const content = document.querySelector('.content');
+        //const [file] = document.querySelector('input[type=file]').files;
+        const reader = new FileReader();
+        f = document.getElementById('file').files[0];;
+        reader.readAsDataURL(f);
+
+
+        reader.onload = function(e) {
+
+            document.getElementById('previewImg').src = this.result;
+            console.log(this.result)
+            };
+
+        
+}
+                                
+        </script>
 	</head>
 	<body>
         <div class="wrapper">
@@ -26,6 +47,113 @@
                 Metaleness <input type="range" min="0" max="100" value="70"/></div>
             <div>
                 Color <input type="color" value="#e66465"/></div>
+            
+            <div style="display: -webkit-inline-box">
+                Texture Map 
+                <div id="upImg">
+                    <img id="previewImg" src="./Assets/emptyImg.jpg" alt="" style="height:120px; width: 120px;"/>
+                    <input id="file" type="file" onchange="fileChange()" />
+                </div>
+                <div style="display: grid; grid-template-rows: 20px;">
+                    <div style="display: inline;">
+                        Use Texture 
+                        <input type="checkbox" value="cube"  id="details" />
+                    </div>
+                    <div style="display: inline; height:20px; transform: translate(0px, 10px);">
+                        Horixon
+                        <select id="geometrySelect">
+                            <option value="cube">Clamp to Edge</option>
+                            <option value="sphere">Repeat</option>
+                        </select>
+                    </div>
+                    <div style="display: inline; height:20px;">
+                        Vertical
+                        <select id="geometrySelect">
+                            <option value="cube">Clamp to Edge</option>
+                            <option value="sphere">Repeat</option>
+                        </select>
+                    </div>
+                    <div style="display: inline; height:20px;">
+                        Repeat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        X
+                        <input style="width:40px"/>
+                        Y
+                        <input style="width:40px"/>
+                    </div>
+                </div>
+            </div>
+            
+             <div style="display: -webkit-inline-box">
+                Rough Map &nbsp;
+                <div id="upImg">
+                    <img id="previewImg" src="./Assets/emptyImg.jpg" alt="" style="height:120px; width: 120px;"/>
+                    <input id="file" type="file" onchange="fileChange()" />
+                </div>
+                <div style="display: grid; grid-template-rows: 20px;">
+                    <div style="display: inline;">
+                        Use Texture 
+                        <input type="checkbox" value="cube"  id="details" />
+                    </div>
+                    <div style="display: inline; height:20px; transform: translate(0px, 10px);">
+                        Horixon
+                        <select id="geometrySelect">
+                            <option value="cube">Clamp to Edge</option>
+                            <option value="sphere">Repeat</option>
+                        </select>
+                    </div>
+                    <div style="display: inline; height:20px;">
+                        Vertical
+                        <select id="geometrySelect">
+                            <option value="cube">Clamp to Edge</option>
+                            <option value="sphere">Repeat</option>
+                        </select>
+                    </div>
+                    <div style="display: inline; height:20px;">
+                        Repeat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        X
+                        <input style="width:40px"/>
+                        Y
+                        <input style="width:40px"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: -webkit-inline-box">
+                Normal Map 
+                <div id="upImg">
+                    <img id="previewImg" src="./Assets/emptyImg.jpg" alt="" style="height:120px; width: 120px;"/>
+                    <input id="file" type="file" onchange="fileChange()" />
+                </div>
+                <div style="display: grid; grid-template-rows: 20px;">
+                    <div style="display: inline;">
+                        Use Texture 
+                        <input type="checkbox" value="cube"  id="details" />
+                    </div>
+                    <div style="display: inline; height:20px; transform: translate(0px, 10px);">
+                        Horixon
+                        <select id="geometrySelect">
+                            <option value="cube">Clamp to Edge</option>
+                            <option value="sphere">Repeat</option>
+                        </select>
+                    </div>
+                    <div style="display: inline; height:20px;">
+                        Vertical
+                        <select id="geometrySelect">
+                            <option value="cube">Clamp to Edge</option>
+                            <option value="sphere">Repeat</option>
+                        </select>
+                    </div>
+                    <div style="display: inline; height:20px;">
+                        Repeat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        X
+                        <input style="width:40px"/>
+                        Y
+                        <input style="width:40px"/>
+                    </div>
+                </div>
+            </div>
+        
+
 
         
         </div>
@@ -33,7 +161,7 @@
         
 		<script src="three.js"></script>
 		<script type="module">
-                  import { OrbitControls } from './viewhelper/OrbitControls.js';
+            import { OrbitControls } from './viewhelper/OrbitControls.js';
             
 
             //let mesh, renderer, scene, camera, controls, controlsGizmo;
@@ -99,7 +227,6 @@
                 camera.aspect = ( container.clientWidth/container.clientHeight);
                 camera.updateProjectionMatrix();
             }
-
 		</script>
 	</body>
 </html>
