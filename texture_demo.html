@@ -12,8 +12,16 @@
         <div id="textureCanvas"></div>
         <div id="textureDetail"></div>
         <div id="textureModified">
+                Geometry 
+            <select id="geometrySelect">
+                <option value="cube">Cube</option>
+                <option value="sphere">Sphere</option>
+            </select>
+            
             <div>
                 Roughness <input type="range" min="0" max="100" value="70"/></div>
+            <div>
+                Opacity <input type="range" min="0" max="100" value="70" id="opacity"/></div>
             <div>
                 Metaleness <input type="range" min="0" max="100" value="70"/></div>
             <div>
@@ -24,7 +32,8 @@
         </div>
         
 		<script src="three.js"></script>
-		<script>
+		<script type="module">
+            import { DragControls } from './Lib/DragControls.js';
             let cameraPersp, cameraOrtho, currentCamera;
             let control, orbit, group;
             //let mesh, renderer, scene, camera, controls, controlsGizmo;
@@ -51,9 +60,9 @@
 			const cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
 
-			camera.position.z = 5;
-            camera.position.x = 1;
-            camera.position.y = 1;
+			camera.position.z = 3;
+            camera.position.x = 0;
+            camera.position.y = 0;
 
 			function animate() {
 				requestAnimationFrame( animate );
