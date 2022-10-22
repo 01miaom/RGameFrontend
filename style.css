@@ -639,4 +639,11 @@ iframe {
      background-color: #292929;
      z-index: 10;
 }
+div#drag {
+    height: 59vh;
+    z-index: 10;
+    position: absolute;
+    width: 10px;
+    cursor: col-resize;
+}
 
