@@ -8,14 +8,12 @@ div {
     minmax(100px, 60vw)
     minmax(30px, 37vw);/*use react to dynamic modified https://letsbuildui.dev/articles/resizable-tables-with-react-and-css-grid*/
     gap: 1px;
-	/*
     grid-template-rows:
     minmax(20px, 3vh)
     minmax(20px, 3vh)
     minmax(200px, 56vh)
     minmax(20px, 3vh)
-    minmax(150px, 35vh);
-	*/
+    minmax(150px, 35vh)
 }
              #ico {
                 height:15px;
