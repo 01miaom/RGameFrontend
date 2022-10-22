@@ -3,13 +3,12 @@ div {
 }
 .wrapper {
   display: grid;
-	/*
-  grid-template-columns:
+    grid-template-columns:
     minmax(40px, 3vw)
     minmax(100px, 60vw)
     minmax(30px, 37vw);/*use react to dynamic modified https://letsbuildui.dev/articles/resizable-tables-with-react-and-css-grid*/
-	/*
     gap: 1px;
+	/*
     grid-template-rows:
     minmax(20px, 3vh)
     minmax(20px, 3vh)
