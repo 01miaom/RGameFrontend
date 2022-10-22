@@ -165,7 +165,7 @@
             
             camera.position.set( 400, 200, 0 );
 
-			const renderer = new THREE.WebGLRenderer();
+			const renderer = new THREE.WebGLRenderer({antialias: true});
             renderer.setClearColor(new THREE.Color(0x4c4b4b));
 			renderer.setSize( document.getElementById("textureCanvas").clientWidth, document.getElementById("textureCanvas").clientHeight );
 			document.getElementById("textureCanvas").appendChild( renderer.domElement );
