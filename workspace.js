@@ -23,7 +23,7 @@ let mesh, renderer, scene, camera, controls, controlsGizmo;
 
 const mouse = new THREE.Vector2(), raycaster = new THREE.Raycaster();
 const objects = [];
-const windowResize
+const windowResize;
 
 /*
 *Load the workspace
