@@ -21,9 +21,10 @@ let cameraPersp, cameraOrtho, currentCamera;
 let control, orbit, group;
 let mesh, renderer, scene, camera, controls, controlsGizmo;
 
+let windowResize;
+
 const mouse = new THREE.Vector2(), raycaster = new THREE.Raycaster();
 const objects = [];
-const windowResize;
 
 /*
 *Load the workspace
