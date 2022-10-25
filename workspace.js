@@ -23,6 +23,7 @@ let mesh, renderer, scene, camera, controls, controlsGizmo;
 
 const mouse = new THREE.Vector2(), raycaster = new THREE.Raycaster();
 const objects = [];
+const windowResize
 
 /*
 *Load the workspace
@@ -39,7 +40,8 @@ if(localStorage.hasOwnProperty("add")==false){
 function process(){
 if(document.getElementById( 'mainCanvas' )){
 init()
-window.onresize = resize;
+windowResize = new ResizeObserver(resize).observe(document.getElementById( 'mainCanvas' ))
+//window.onresize = resize;
 //animate();
 //editor()
 clearInterval(theProcess);
