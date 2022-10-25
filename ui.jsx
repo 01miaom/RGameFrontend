@@ -94,9 +94,31 @@ class LeftBar extends React.Component {
 }
 
 class RightBar extends React.Component {
+    drag(e) {
+        let elementLeft = document.getElementById("rightBar").offsetLeft;
+        let windowWidth = window.innerWidth;
+        let mouseX, delta, middleRate, rightRate;
+       
+
+            mouseX = e.clientX;
+            delta = Math.abs(elementLeft-mouseX);
+            if(delta<10){
+                document.onmousemove = function(e){
+                    mouseX = event.clientX;
+                    middleRate = 100*(mouseX-40)/windowWidth;
+                    rightRate = 100-3-middleRate;
+                    document.getElementsByClassName('wrapper')[0].style.gridTemplateColumns="minmax(40px, 3vw)minmax(100px,"+ middleRate+"vw)minmax(30px, "+rightRate+"vw)";
+                }     
+            }
+                
+            document.onmouseup = function(){
+                document.onmousemove=null;
+            }
+ 
+    }
     render() {
         return (
-            <div id="rightBar">
+            <div id="rightBar" onMouseDown={this.drag}>
                 <SearchBar />
             </div>
         );
