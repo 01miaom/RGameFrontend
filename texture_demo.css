@@ -62,10 +62,10 @@ input[type="color"] {
     width: 120px;
     opacity: 0;
     transform: translate(23px, -121px);
+    cursor: copy;
 }
 #previewImg {
     transform: translate(23px, 3px);
-    cursor: copy;
 }
 #upImg {
     width: 160px;
