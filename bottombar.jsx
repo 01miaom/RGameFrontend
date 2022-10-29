@@ -18,21 +18,13 @@ class BottonBarAssets extends React.Component {
             <div id="assetsPage">
                 <div id="line">
                 <Material />
-                <Material />
                 <Image />
-                <Material />
                 <Audio />
                 <Folder />
-                <Material />
                 <Video />
-                <Material />
-                <Material />
                 <Model />
-                <Material /> 
                     </div>
                 <div id="line">
-                <Material />
-                <Material />
                 <Video />
                 </div>
             </div>
