@@ -65,6 +65,7 @@ input[type="color"] {
 }
 #previewImg {
     transform: translate(23px, 3px);
+    cursor: copy;
 }
 #upImg {
     width: 160px;
