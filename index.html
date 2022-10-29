@@ -34,8 +34,22 @@
 
      
       <script src="./workspace.js" type="module"></script>
-       <script>
+        <script>
+         let theChangeColorProcess = setInterval(changeColorProcess,200);
 
-      </script>
+             
+         function changeColorProcess(){
+             if(document.getElementById( 'canvasEdited' )){
+                 let tag = document.createElement("script")
+                 tag.src="./Lib/changeColor.js"
+                 document.body.appendChild(tag)
+
+                 clearInterval(theChangeColorProcess);
+
+             }
+        }
+
+         
+         </script>
   </body>
 </html>
