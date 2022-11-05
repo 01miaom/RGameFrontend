@@ -66,8 +66,8 @@ class MainCanvas extends React.Component {
     render() {
         return (
              <div id= "mainCanvas">
-            </div>
-            
+                    <iframe src="workspace.html" width='100%' height='100%'></iframe>
+                </div>    
         );
     }
 }
