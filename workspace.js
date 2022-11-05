@@ -39,9 +39,9 @@ if(localStorage.hasOwnProperty("add")==false){
 }
 
 function process(){
-if(document.getElementById( 'mainCanvas' )){
+if(document.getElementById( 'mainCanvas1' )){
 init()
-windowResize = new ResizeObserver(resize).observe(document.getElementById( 'mainCanvas' ))
+windowResize = new ResizeObserver(resize).observe(document.getElementById( 'mainCanvas1' ))
 //window.onresize = resize;
 //animate();
 //editor()
@@ -52,7 +52,7 @@ setInterval(editor,1.0/60);
 
 function init() {
   // renderer
-  const container = document.getElementById( 'mainCanvas' );
+  const container = document.getElementById( 'mainCanvas1' );
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize( container.clientWidth, container.clientHeight );
   renderer.setClearColor(new THREE.Color(0x4c4b4b));
@@ -69,8 +69,8 @@ function init() {
   orbit = new OrbitControls( camera, renderer.domElement );
   orbit.update();
   orbit.addEventListener( 'change', editor );
-  document.getElementById('mainCanvas').addEventListener( 'click', onClick );
-  document.getElementById('mainCanvas').addEventListener( 'touchstart', onTouch );// touch screen
+  document.getElementById('mainCanvas1').addEventListener( 'click', onClick );
+  document.getElementById('mainCanvas1').addEventListener( 'touchstart', onTouch );// touch screen
   control = new TransformControls( camera, renderer.domElement );
   control.addEventListener( 'change', editor );
   control.addEventListener( 'dragging-changed', function ( event ) {
@@ -225,7 +225,7 @@ function editor() {
 
 //resize window when window change size
 function resize() {
-  const container = document.getElementById( 'mainCanvas' );
+  const container = document.getElementById( 'mainCanvas1' );
   renderer.setSize( container.clientWidth, container.clientHeight );
   camera.aspect = ( container.clientWidth/container.clientHeight);
   camera.updateProjectionMatrix();
@@ -330,8 +330,8 @@ window.addEventListener( 'keyup', function ( event ) {
 
 
 function onClick( event ) {
-					mouse.x = ((event.clientX - mainCanvas.getBoundingClientRect().left) / mainCanvas.offsetWidth) * 2 - 1;
-					mouse.y = -((event.clientY - mainCanvas.getBoundingClientRect().top) / mainCanvas.offsetHeight) * 2 + 1;
+					mouse.x = ((event.clientX - mainCanvas1.getBoundingClientRect().left) / mainCanvas1.offsetWidth) * 2 - 1;
+					mouse.y = -((event.clientY - mainCanvas1.getBoundingClientRect().top) / mainCanvas1.offsetHeight) * 2 + 1;
 
 					raycaster.setFromCamera( mouse, camera );
 
@@ -350,8 +350,8 @@ function onClick( event ) {
 			}
 
 function onTouch( event ) {
-					mouse.x = ((event.targetTouches[0].pageX - mainCanvas.getBoundingClientRect().left) / mainCanvas.offsetWidth) * 2 - 1;
-					mouse.y = -((event.targetTouches[0].pageY - mainCanvas.getBoundingClientRect().top) / mainCanvas.offsetHeight) * 2 + 1;
+					mouse.x = ((event.targetTouches[0].pageX - mainCanvas1.getBoundingClientRect().left) / mainCanvas1.offsetWidth) * 2 - 1;
+					mouse.y = -((event.targetTouches[0].pageY - mainCanvas1.getBoundingClientRect().top) / mainCanvas1.offsetHeight) * 2 + 1;
 
 					raycaster.setFromCamera( mouse, camera );
 
