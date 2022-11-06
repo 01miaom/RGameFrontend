@@ -41,10 +41,9 @@ if(localStorage.hasOwnProperty("add")==false){
 function process(){
 if(document.getElementById( 'mainCanvas1' )){
 init()
+document.getElementsByTagName("canvas")[0].setAttribute("tabindex","0");
 windowResize = new ResizeObserver(resize).observe(document.getElementById( 'mainCanvas1' ))
-//window.onresize = resize;
-//animate();
-//editor()
+
 clearInterval(theProcess);
 setInterval(editor,1.0/60);
 }
@@ -379,18 +378,3 @@ function render() {
 
 export default {resize}
 
-
-/*
-
-window.onresize=function(){
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    let k=container.clientWidth/container.clientHeight;
-    //camera.left=-s*k;
-    //camera.right=s*k;
-    //camera.top=s;
-    //camera.bottom=-s;
-    //
-    camera.aspect=k;
-    camera.updateProjectionMatrix();
-}
-*/
