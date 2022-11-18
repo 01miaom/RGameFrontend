@@ -46,6 +46,42 @@
     color: white;
     background: blueviolet;
 }
+    #difference {
+    border-radius: 4px;
+    padding: 10px;
+    position: absolute;
+    height:16px;
+    top: 200px;
+    right: 36px;
+    z-index: 100003;
+    /* top: 0; */
+    color: white;
+    background: blueviolet;
+        }
+    #intersect {
+    border-radius: 4px;
+    padding: 10px;
+    position: absolute;
+    height:16px;
+    top: 250px;
+    right: 36px;
+    z-index: 100003;
+    /* top: 0; */
+    color: white;
+    background: blueviolet;
+        }
+    #union {
+    border-radius: 4px;
+    padding: 10px;
+    position: absolute;
+    height:16px;
+    top: 300px;
+    right: 36px;
+    z-index: 100003;
+    /* top: 0; */
+    color: white;
+    background: blueviolet;
+        }
     canvas {
     outline: 0px;
 }
@@ -61,8 +97,22 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-r-square" viewBox="0 0 16 16" style="transform: translate(2px, 1px);">
                     <path d="M5.5 4.002h3.11c1.71 0 2.741.973 2.741 2.46 0 1.138-.667 1.94-1.495 2.24L11.5 12H9.98L8.52 8.924H6.836V12H5.5V4.002Zm1.335 1.09v2.777h1.549c.995 0 1.573-.463 1.573-1.36 0-.913-.596-1.417-1.537-1.417H6.835Z"/>
                     <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2Zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2Z"/>
-                </svg>
-      </div>
+                </svg></div>
+                <div id="difference">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-back" viewBox="0 0 16 16">
+                    <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z"/>
+                    </svg>
+                </div>
+                <div id="intersect">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-intersect" viewBox="0 0 16 16">
+                    <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm5 10v2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2v5a2 2 0 0 1-2 2H5zm6-8V2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h2V6a2 2 0 0 1 2-2h5z"/>
+                    </svg>
+                </div>
+                <div id="union">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-union" viewBox="0 0 16 16">
+                    <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2z"/>
+                    </svg>
+                </div>
       <script id="initalwork" src="./workspace.js" type="module"></script>
   </body>
 </html>
