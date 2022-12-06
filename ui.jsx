@@ -1,3 +1,4 @@
+let codePage = ["codepage1"];//use for test
 
 const {useMatch, useParams, useLocation} = ReactRouterDOM;
 const {BrowserRouter, Routes, Route, Link} = ReactRouterDOM;
@@ -22,6 +23,23 @@ return (
 
 //export
 class Ui extends React.Component {
+  constructor(props) {
+        super(props);
+        this.state={ 
+        ref:1
+    };
+  }
+    
+  deleteCodePage =()=>{
+        codePage.splice(0,1);
+        
+        this.setState({ref:2})//force react update
+    }
+   
+    addCodePage =()=>{
+        codePage.push("newCodePage");
+        this.setState({ref:2})//force react update
+    }
     render() {
         return (
             <div class="wrapper"> 
@@ -29,7 +47,9 @@ class Ui extends React.Component {
                     <TopBar />
                     <LeftBar/>
                     <MainCanvas />
-                    <CodeEditor />
+                    {codePage.map((codePage) => {
+                    return <CodeEditor id={codePage}/>
+                    })}
                     <Texture />
                     <RightBar />
                     <CenterBar />
@@ -56,7 +76,7 @@ class TopBar extends React.Component {
     render() {
         return (
             <div id="topBarOut">
-                    <Bar />
+                    <Bar deleteCodePage={this.props.deleteCodePage}/>
             </div>
         );
     }
@@ -75,7 +95,7 @@ class MainCanvas extends React.Component {
 class CodeEditor extends React.Component {
     render() {
         return (
-             <div id= "codeEditor">
+             <div id= {this.props.id} class="codeEditor">
                 <iframe src="codeEditor.html" width='100%' height='100%' id="codeFrame"></iframe>
             </div>
             
@@ -87,7 +107,7 @@ class LeftBar extends React.Component {
     render() {
         return (
             <div id="leftBar">
-                    <Shape />
+                    <Shape addCodePage={this.props.addCodePage}/>
             </div>
         );
     }
