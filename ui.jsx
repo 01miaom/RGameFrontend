@@ -44,8 +44,8 @@ class Ui extends React.Component {
         return (
             <div class="wrapper"> 
                     <HeadBar/> 
-                    <TopBar />
-                    <LeftBar/>
+                    <TopBar deleteCodePage={this.deleteCodePage}/>
+                    <LeftBar addCodePage={this.addCodePage}/>
                     <MainCanvas />
                     {codePage.map((codePage) => {
                     return <CodeEditor id={codePage}/>
