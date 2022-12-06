@@ -105,8 +105,20 @@ class RightBar extends React.Component {
             if(delta<10){
                 document.onmousemove = function(e){
                     mouseX = event.clientX;
+                    elementLeft = document.getElementById("rightBar").offsetLeft;
+                    
+                    
+                    //delete event, if mouse leave the element
+                    if(mouseX<elementLeft){
+                        document.onmousemove=null;
+                        console.log("leave")
+                    }
+                    
+                    
                     middleRate = 100*(mouseX-40)/windowWidth;
                     rightRate = 100-3-middleRate;
+                    
+                    
                     document.getElementsByClassName('wrapper')[0].style.gridTemplateColumns="minmax(40px, 3vw)minmax(100px,"+ middleRate+"vw)minmax(30px, "+rightRate+"vw)";
                 }     
             }
