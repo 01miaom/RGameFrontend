@@ -2,7 +2,7 @@
 class Bar extends React.Component {
      clickButton1(){
         console.log("change to maincanvas");
-        document.getElementById('codeEditor').style.visibility = 'hidden';
+         document.getElementsByClassName('codeEditor')[0].style.visibility = 'hidden';
         document.getElementById('texture').style.visibility = 'hidden';
         document.getElementById('mainCanvas').style.visibility = 'visible';
         document.getElementById('Scene1').style.boxShadow = '0 0 4px white';
@@ -21,7 +21,7 @@ class Bar extends React.Component {
     clickButton3(){
         console.log("change to texture");
         document.getElementById('texture').style.visibility = 'visible';
-        document.getElementById('codeEditor').style.visibility = 'hidden';
+         document.getElementsByClassName('codeEditor')[0].style.visibility = 'hidden';
         document.getElementById('mainCanvas').style.visibility = 'hidden';
         document.getElementById('code1').style.boxShadow = '0 0 0 0 white';
          document.getElementById('Scene1').style.boxShadow = '0 0 0 0 white';
