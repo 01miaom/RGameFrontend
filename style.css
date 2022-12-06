@@ -609,7 +609,7 @@ iframe {
     border-width: 0px;
     background-color: #292929;
 }
-#codeEditor {
+.codeEditor {
      grid-column: 2;
      grid-row: 3;
      background-color: #333;
