@@ -56,7 +56,7 @@ class Shape extends React.Component {
 </svg>
                     		 	 <ul class="left_ul_ul">
 						<li class="subcat">R</li>
-                         			<li class="subcat" onClick={this.props.addCodePage>Js</li>
+                         			<li class="subcat" onClick={this.props.addCodePage}>Js</li>
 					</ul>
 	
 				</li>
