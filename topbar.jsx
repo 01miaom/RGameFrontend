@@ -52,7 +52,7 @@ class Bar extends React.Component {
 
                 <div class="bar" onClick={this.clickButton3} id="texture1"><div>texture</div> <div id="barclose">×</div></div>
 
-               <div class="bar" onClick={this.clickButton4} id="run"><div>run</div>
+               <div class="bar" onClick={this.clickButton4} id="run"><div>run</div></div>
           </div>
         );
     }
