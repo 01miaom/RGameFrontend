@@ -75,7 +75,7 @@ function init() {
   
   // camera
   camera = new THREE.PerspectiveCamera( 95,  container.clientWidth/container.clientHeight , 0.1, 10000 );
-  camera.position.set( 0, 2, 12 );
+  camera.position.set( -4, 4, 6 );
 
  
   // ambient light
@@ -101,10 +101,8 @@ function init() {
                 const loader = new STLLoader();
     //stl with glass
 
-				loader.load( './Assets/testmodel.stl', function ( geometry ) {
-                    
-               
-                    
+		loader.load( './Assets/testmodel.stl', function ( geometry ) {
+  
                 const texture = new THREE.CanvasTexture( generateTexture() );
 				texture.magFilter = THREE.NearestFilter;
 				texture.wrapT = THREE.RepeatWrapping;
@@ -129,10 +127,10 @@ function init() {
 
 					const mesh = new THREE.Mesh( geometry, material );
 
-					mesh.position.set( -6, 0, 0.6 );
-					mesh.rotation.set(  - Math.PI / 2, 0,0 );
-					mesh.scale.set( 0.5, 0.5, 0.5 );
-                    //mesh.rotateX(90);
+					mesh.position.set( -6, 4, 0.6 );
+					mesh.rotation.set(  - Math.PI / 2, 0, 0 );
+					mesh.scale.set( 0.1, 0.1, 0.1 );
+                 
 					mesh.castShadow = true;
 					mesh.receiveShadow = true;
 
