@@ -7,6 +7,8 @@ class File extends React.Component {
         document.getElementById('cover').style.display='block';
         document.getElementById('uploadwindow').style.display='block';
     }
+	
+    //copy user code
     runProgram(){
         let userCode = document.getElementById('codeFrame').contentWindow.myCodeMirror.getValue();
         
@@ -14,7 +16,11 @@ class File extends React.Component {
         script.type = 'module';
         script.appendChild(document.createTextNode(userCode));
         
-        document.body.appendChild(script);
+        let oldwork = document.getElementById('test_workspace').contentWindow.document.getElementById("initalwork");  
+	    
+	document.getElementById('test_workspace').contentWindow.document.getElementById("workplace").replaceChild(script,oldwork);
+        
+	document.getElementById('test_workspace').contentWindowdocument.body.appendChild(script);
         
     }
     render() {
