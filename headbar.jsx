@@ -20,8 +20,6 @@ class File extends React.Component {
 	    
 	document.getElementById('test_workspace').contentWindow.document.getElementById("workplace").replaceChild(script,oldwork);
         
-	document.getElementById('test_workspace').contentWindowdocument.body.appendChild(script);
-        
     }
     render() {
         return (
