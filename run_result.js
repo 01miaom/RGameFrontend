@@ -39,7 +39,7 @@ let theProcess = setInterval(process,100);
 				exposure: 1
 			};
                 const hdrEquirect = new RGBELoader()
-				.setPath( './Lib/' )
+				.setPath( './Assets/' )
 				.load( 'royal_esplanade_1k.hdr', function () {
 
 					hdrEquirect.mapping = THREE.EquirectangularReflectionMapping;
@@ -101,7 +101,7 @@ function init() {
                 const loader = new STLLoader();
     //stl with glass
 
-				loader.load( './testmodel.stl', function ( geometry ) {
+				loader.load( './Assets/testmodel.stl', function ( geometry ) {
                     
                
                     
