@@ -50,6 +50,7 @@ class Ui extends React.Component {
                     {codePage.map((codePage) => {
                     return <CodeEditor id={codePage}/>
                     })}
+                    <RunResult />
                     <Texture />
                     <RightBar />
                     <CenterBar />
@@ -97,6 +98,17 @@ class CodeEditor extends React.Component {
         return (
              <div id= {this.props.id} class="codeEditor">
                 <iframe src="codeEditor.html" width='100%' height='100%' id="codeFrame"></iframe>
+            </div>
+            
+        );
+    }
+}
+
+class RunResult extends React.Component {
+    render() {
+        return (
+             <div class="runResult" id="runResult0">
+                <iframe src="run_result.html" width='100%' height='100%' id="runResult"></iframe>
             </div>
             
         );
