@@ -16,6 +16,7 @@ import { OrbitControlsGizmo } from "./viewhelper/OrbitControlsGizmo.js";
 import { TransformControls } from './Lib/TransformControls.js';
 import { STLLoader } from './Lib/STLLoader.js';
 import { DragControls } from './Lib/DragControls.js';
+import { RGBELoader } from './Lib/RGBELoader.js';
 
 let cameraPersp, cameraOrtho, currentCamera;
 let control, orbit, group;
@@ -31,6 +32,28 @@ const objects = [];
 *There may be multiple workspace page in here, such as Edit, Animation, Run
 */
 let theProcess = setInterval(process,100);
+
+const params = {
+				color: 0xe6e147,
+				transmission: 0.95,
+				opacity: 1,
+				metalness: 0.05,
+				roughness: 0.05,
+				ior: 1.79,
+				thickness: 0.01,
+				specularIntensity: 1,
+				specularColor: 0xffffff,
+				envMapIntensity: 1,
+				lightIntensity: 1,
+				exposure: 1
+};
+const hdrEquirect = new RGBELoader()
+				.setPath( './Assets/' )
+				.load( 'royal_esplanade_1k.hdr', function () {
+
+				hdrEquirect.mapping = THREE.EquirectangularReflectionMapping;
+
+} );
 
 if(localStorage.hasOwnProperty("add")==false){
     var obj = [];
@@ -93,6 +116,58 @@ function init() {
   var light = new THREE.DirectionalLight( 0xffffff, 1 );
   light.position.set( 2,2, 0 );
   scene.add( light );
+	
+  //light
+  const rectLight1 = new THREE.RectAreaLight( 0xff0000, 5, 4, 10 );
+  rectLight1.position.set( - 5, 5, 5 );
+  scene.add( rectLight1 );
+	
+  //floor
+  const geoFloor = new THREE.BoxGeometry( 2000, 0.1, 2000 );
+  const matStdFloor = new THREE.MeshStandardMaterial( { color: 0xf1f1df, roughness: 0.1, metalness: 0 } );
+  const mshStdFloor = new THREE.Mesh( geoFloor, matStdFloor );
+  scene.add( mshStdFloor );
+	
+  const loader = new STLLoader();
+				loader.load( './Assets/testmodel.stl', function ( geometry ) {
+                    
+               
+   //stl with glass                 
+                const texture = new THREE.CanvasTexture( generateTexture() );
+				texture.magFilter = THREE.NearestFilter;
+				texture.wrapT = THREE.RepeatWrapping;
+				texture.wrapS = THREE.RepeatWrapping;
+				texture.repeat.set( 1, 3.5 );
+
+					const material = new THREE.MeshPhysicalMaterial( {
+					color: params.color,
+					metalness: params.metalness,
+					roughness: params.roughness,
+					ior: params.ior,
+					alphaMap: texture,
+					envMap: hdrEquirect,
+					envMapIntensity: params.envMapIntensity,
+					transmission: params.transmission, // use material.transmission for glass materials
+					//specularIntensity: params.specularIntensity,
+					//specularColor: params.specularColor,
+					opacity: params.opacity,
+					side: THREE.DoubleSide,
+					transparent: true
+				} );
+
+					const mesh = new THREE.Mesh( geometry, material );
+
+					mesh.position.set( -6, 2, 0.6 );
+					mesh.rotation.set(  - Math.PI / 2, 0, 10 );
+					mesh.scale.set( 0.1, 0.1, 0.1 );
+					mesh.castShadow = true;
+					mesh.receiveShadow = true;
+
+					scene.add( mesh );
+                    objects.push( mesh );
+
+				} );
+    
 	
 	//add group, use for test
 	group = new THREE.Group();
@@ -375,6 +450,20 @@ function render() {
 			renderer.render( scene, camera );
 			}
 
+
+function generateTexture() {
+
+				const canvas = document.createElement( 'canvas' );
+				canvas.width = 2;
+				canvas.height = 2;
+
+				const context = canvas.getContext( '2d' );
+				context.fillStyle = 'white';
+				context.fillRect( 0, 1, 2, 1 );
+
+				return canvas;
+
+			}
 
 export default {resize}
 
