@@ -114,6 +114,22 @@ class FileSystem {
 
   file.name = newPath;
 }
+  
+  deleteFile(name) {
+  const index = this.currentDir.files.findIndex(file => file.name === name);
+  if (index >= 0) {
+    const file = this.currentDir.files[index];
+    if (file.type === 'directory' && file.files.length > 0) {
+      // recursively delete all files and sub-directories
+      for (const subfile of file.files) {
+        this.deleteFile(subfile.name);
+      }
+    }
+    this.currentDir.files.splice(index, 1);
+  } else {
+    throw new Error(`File ${name} not found`);
+  }
+}
 
 
 }
