@@ -16,6 +16,7 @@ class BottonBarAssets extends React.Component {
     render() {
         return (
             <div id="assetsPage">
+            <div id="line">
                 {currentDocumentTree.map((currentDocumentTree)=>{
                         switch(currentDocumentTree.type){
                             case "Folder":
@@ -34,6 +35,7 @@ class BottonBarAssets extends React.Component {
                                 return null;
                         }
                     })}
+            </div>
             </div>
         );
     }
