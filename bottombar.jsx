@@ -55,6 +55,9 @@ class BottonBarAnimation extends React.Component {
 function BottonBarConsole() {
   const [input, setInput] = useState('')
   const [output, setOutput] = useState([])
+  const inputRef = useRef(input);
+  const historyRef = useRef([]);
+  const historyIndexRef = useRef(0);
 
   useEffect(() => {
     const oldLog = console.log;
@@ -90,10 +93,27 @@ function BottonBarConsole() {
         //result = 'undefined';
       }
       setOutput((prevOutput) => [...prevOutput, result]);
+      historyRef.current.push(input);
+      historyIndexRef.current = historyRef.current.length;
     } catch (error) {
       console.error(error.message);
     }
     setInput('');
+  };
+    
+   const handleKeyDown = (event) => {
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      historyIndexRef.current = Math.max(0, historyIndexRef.current - 1);
+      setInput(historyRef.current[historyIndexRef.current]);
+    } else if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      historyIndexRef.current = Math.min(
+        historyRef.current.length,
+        historyIndexRef.current + 1
+      );
+      setInput(historyRef.current[historyIndexRef.current] || '');
+    }
   };
 
   const handleChange = (event) => {
@@ -106,7 +126,15 @@ function BottonBarConsole() {
                 ))}
             <form onSubmit={handleSubmit}>
                 <div id="consoleTag">(base) user@RGame ~ % 
-                <input type="text" id="consoleInput" value={input} onChange={handleChange} /></div>
+                <input 
+                    type="text" 
+                    id="consoleInput" 
+                    value={input} 
+                    onChange={handleChange}
+                    onKeyDown={handleKeyDown}
+                    ref={inputRef}
+                    />
+                </div>
                 <button type="submit" id="consoleButton"></button>
             </form>
             </div>
