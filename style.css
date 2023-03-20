@@ -494,7 +494,8 @@ input[type=checkbox]:checked::after{
             visibility: hidden;  
 	    display: block;
 	    padding-left: 8px;
-	    overflow: hidden;
+	    overflow: scroll;
+            padding-bottom: 10px;
 }
 #materialcards {
             padding: 20px;
@@ -678,4 +679,5 @@ button#drag {
     background-color: transparent;
     height: 16px;
     font-size: 12px;
+    width: 60%;
 }
