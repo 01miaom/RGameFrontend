@@ -52,12 +52,64 @@ class BottonBarAnimation extends React.Component {
     }
 }
 
-class BottonBarConsole extends React.Component {
-    render() {
+function BottonBarConsole() {
+  const [input, setInput] = useState('')
+  const [output, setOutput] = useState([])
+
+  useEffect(() => {
+    const oldLog = console.log;
+    console.log = function (...args) {
+      setOutput((prevOutput) => [...prevOutput, args.join(' ')]);
+      oldLog(...args);
+    };
+
+    const oldError = console.error;
+    console.error = function (...args) {
+      setOutput((prevOutput) => [...prevOutput, args.join(' ')]);
+      oldError(...args);
+    };
+
+    const oldWarn = console.warn;
+    console.warn = function (...args) {
+      setOutput((prevOutput) => [...prevOutput, args.join(' ')]);
+      oldWarn(...args);
+    };
+
+    return () => {
+      console.log = oldLog;
+      console.error = oldError;
+      console.warn = oldWarn;
+    };
+  }, []);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    try {
+      let result = eval(input);
+      if (typeof result === 'undefined') {
+        //result = 'undefined';
+      }
+      setOutput((prevOutput) => [...prevOutput, result]);
+    } catch (error) {
+      console.error(error.message);
+    }
+    setInput('');
+  };
+
+  const handleChange = (event) => {
+    setInput(event.target.value);
+  };
         return (
             <div id="consolePage">
+                {output.map((item, index) => (
+                    <div key={index} id="consoleOutput">{item}</div>
+                ))}
+            <form onSubmit={handleSubmit}>
+                <div id="consoleTag">(base) user@RGame ~ %
+                <input type="text" id="consoleInput" value={input} onChange={handleChange} /></div>
+                <button type="submit" id="consoleButton"></button>
+            </form>
             </div>
         );
-    }
 }
 
