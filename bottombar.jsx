@@ -105,7 +105,7 @@ function BottonBarConsole() {
                     <div key={index} id="consoleOutput">{item}</div>
                 ))}
             <form onSubmit={handleSubmit}>
-                <div id="consoleTag">(base) user@RGame ~ %
+                <div id="consoleTag">(base) user@RGame ~ % 
                 <input type="text" id="consoleInput" value={input} onChange={handleChange} /></div>
                 <button type="submit" id="consoleButton"></button>
             </form>
