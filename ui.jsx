@@ -2,7 +2,7 @@ let codePage = ["codepage1"];//use for test
 
 const {useMatch, useParams, useLocation} = ReactRouterDOM;
 const {BrowserRouter, Routes, Route, Link} = ReactRouterDOM;
-const {useState, useEffect} = React;
+const {useState, useEffect, useRef} = React;
 
 class App extends React.Component {
 render() {
