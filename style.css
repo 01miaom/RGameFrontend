@@ -491,7 +491,8 @@ input[type=checkbox]:checked::after{
             grid-column: 1/3;
             grid-row: 5;
             background-color: #222;
-            visibility: hidden;         
+            visibility: hidden;  
+	    display: block;
 }
 #materialcards {
             padding: 20px;
