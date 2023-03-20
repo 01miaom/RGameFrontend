@@ -493,6 +493,7 @@ input[type=checkbox]:checked::after{
             background-color: #222;
             visibility: hidden;  
 	    display: block;
+	    padding-left: 8px;
 }
 #materialcards {
             padding: 20px;
@@ -656,4 +657,24 @@ button#drag {
      background-color: #333;
      z-index: 10;
 }
-
+#consoleOutput {
+    height: 16px;
+    font-size: 12px;
+    color: white;
+}
+#consoleButton {
+    display: none;
+}
+#consoleTag {
+    height: 16px;
+    font-size: 12px;
+    color: white;
+}
+#consoleInput {
+    border:0 none;
+    outline:none;
+    color: white;
+    background-color: transparent;
+    height: 16px;
+    font-size: 12px;
+}
