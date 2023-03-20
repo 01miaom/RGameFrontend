@@ -506,8 +506,9 @@ input[type=checkbox]:checked::after{
     height: 18px;
     color: white;
     padding: 0 1vh;
-    position: absolute;
-    transform: translate(14px, 2px);
+    position: relative;
+    top: -1px;
+    left: 14px;
     border-radius: 6px;
 }
 #centersearchicon {
