@@ -23,7 +23,7 @@
                 imgData[i+2] = imgData[i+2] *B/255;//B
                 imgData[i+3] = imgData[i+3] *alpha/255;//Alpha
              }
-         console.log(imgData)
+         //console.log(imgData)
      }
        
      function drawEditedImage(newData) {
