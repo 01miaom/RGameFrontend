@@ -1,34 +1,22 @@
 class Shape extends React.Component {
-    createCube(){
-        var obj = [{nodeClass: "cube", id: "scene1", name: "main scene",no: '0',positionx:0,positiony:6,positionz:0,scalex:1,scaley:1,scalez:1,rotationx:0,rotationy:0,rotationz:0},];
-       obj = JSON.stringify(obj);
-　　    localStorage.setItem("add", obj);
-    }
-    createSphere(){
-        var obj = [{nodeClass: "sphere", id: "scene1", name: "main scene",no: '0',positionx:4,positiony:6,positionz:0,scalex:1,scaley:1,scalez:1,rotationx:0,rotationy:0,rotationz:0},];
-       obj = JSON.stringify(obj);
-　　    localStorage.setItem("add", obj);
-    }
-    createCylinder(){
-        var obj = [{nodeClass: "cylinder", id: "scene1", name: "main scene",no: '0',positionx:4,positiony:6,positionz:2,scalex:1,scaley:1,scalez:1,rotationx:0,rotationy:0,rotationz:0},];
-       obj = JSON.stringify(obj);
-　　    localStorage.setItem("add", obj);
-    }
-    createCone(){
-        var obj = [{nodeClass: "cone", id: "scene1", name: "main scene",no: '0',positionx:6,positiony:6,positionz:2,scalex:1,scaley:1,scalez:1,rotationx:0,rotationy:0,rotationz:0},];
-       obj = JSON.stringify(obj);
-　　    localStorage.setItem("add", obj);
-    }
-    createCapsule(){
-        var obj = [{nodeClass: "capsule", id: "scene1", name: "main scene",no: '0',positionx:6,positiony:6,positionz:6,scalex:1,scaley:1,scalez:1,rotationx:0,rotationy:0,rotationz:0},];
-       obj = JSON.stringify(obj);
-　　    localStorage.setItem("add", obj);
-    }
-    createPlane(){
-        var obj = [{nodeClass: "plane", id: "scene1", name: "main scene",no: '0',positionx:6,positiony:0,positionz:6,scalex:1,scaley:1,scalez:1,rotationx:-1.5708,rotationy:0,rotationz:0},];
-       obj = JSON.stringify(obj);
-　　    localStorage.setItem("add", obj);
-    }
+    createShape = (nodeClass, positionx, positiony, positionz) => {
+    const obj = [{
+      nodeClass,
+      id: "scene1",
+      name: "main scene",
+      no: '0',
+      positionx,
+      positiony,
+      positionz,
+      scalex: 1,
+      scaley: 1,
+      scalez: 1,
+      rotationx: 0,
+      rotationy: 0,
+      rotationz: 0,
+    }];
+    localStorage.setItem("add", JSON.stringify(obj));
+  }
     render() {
         return (
               <div class="header">
@@ -40,12 +28,12 @@ class Shape extends React.Component {
 </svg>
                     
 					<ul class="left_ul_ul">
-						<li class="subcat" onClick={this.createCube}>cube</li>
-						<li class="subcat" onClick={this.createSphere}>sphere</li>
-						<li class="subcat" onClick={this.createCylinder}>cylinder</li>
-                        <li class="subcat" onClick={this.createCone}>cone</li>
-                        <li class="subcat" onClick={this.createPlane}>plane</li>
-                        <li class="subcat">text</li>
+						<li class="subcat" onClick={() => this.createShape("cube", 0, 6, 0)}>cube</li>
+						<li class="subcat" onClick={() => this.createShape("sphere", 4, 6, 0)}>sphere</li>
+						<li class="subcat" onClick={() => this.createShape("cylinder", 4, 6, 2)}>cylinder</li>
+                        			<li class="subcat" onClick={() => this.createShape("cone", 6, 6, 2)}>cone</li>
+                        			<li class="subcat" onClick={() => this.createShape("plane", 6, 0, 6)}>plane</li>
+                        			<li class="subcat">text</li>
 					</ul>
 				</li>
 
