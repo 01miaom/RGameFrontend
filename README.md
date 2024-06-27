@@ -1,4 +1,4 @@
-## RGameFrontend (No finish yet)
+## RGameFrontend (WIP)
 RGame Frontend
 
 ![](docs/UI2.png)
